@@ -1,0 +1,59 @@
+<Header style=" background-color: #0a2250; ">
+   
+    <div class="px-5 mx-auto">
+       
+        <div class="w-full flex justify-between items">
+            <div class="flex items" style="margin-left: 45px; margin-top: 10px;"> 
+                <img src="assets/e85db64f09db121b8f6db6adac4e8897.jpg" alt="Icon" class="h-20 w-20 rounded-full">
+            </div>
+            <div style="top:150px;
+  text-align: center ;
+  margin-left: 30%;
+  font-size: 24px; 
+  margin-bottom: 30px;
+  position: absolute;   
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 1000; 
+  font-family: Arial, Helvetica, sans-serif; 
+  display: flex;  
+  align-items: center;  
+"> 
+    <input class="flex w-[200px] md:w-[350px] sm:w-[250px] rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none pr-6" 
+    style="margin-right: 10px;" 
+    type="text" 
+    placeholder="Search..." > 
+    
+    <i class="fas fa-search" style="margin-left: 10px;"></i> <!-- Réduire la marge à gauche pour aligner l'icône à côté du champ de recherche -->
+</div>
+                 <div class="flex items-center space-x-4">
+                
+            <span (click)="logout()"  class="h-10   relative w-10 grid rounded-full place-content-center cursor-pointer bg-black ">
+                        <i class="text-xl text-white text-muted-foreground fa-solid fa-sign-out"></i>
+                </span>
+                <span (click)="toggleUserInfo()" class="h-10 relative w-10 grid rounded-full place-content-center ">
+                    <img [src]="this.photoUrl" alt="Image de l'utilisateur"style="width: 50px;height: 50px;border-radius: 50%;margin-right: 10px;">
+                    <div *ngIf="showUserInfo" class="profile-bubble">
+                      <span class="info-pair">
+                        <p class="info-value" style="font-size: larger;text-align: center;"> <i class="fas fa-user" style="font-weight: bold;
+                          margin-bottom: 2px;color: #333;"></i> Hi, {{ capitalizedPassword }}!</p>
+                      </span>
+                  
+                      <img [src]="this.photoUrl" alt="Image de l'utilisateur"style=" width:70px;height: 70px;border-radius: 50%;margin-left: 70px; ">
+                  
+                      <span class="info-pair"style="font-size: larger;text-align: center;margin-top: 20%;">                
+                        <p class="info-value">{{ authService.getUserEmail() }}
+                        </p>
+                      </span>
+                      <span class="info-pair" >
+                        <p class="info-value"style="margin-left: 20px;font-size: larger;">{{ authService.getUserType() }}</p>
+                      </span>
+                    </div>
+                  </span>
+   
+
+            </div>
+        </div>
+    </div>
+    
+</Header>

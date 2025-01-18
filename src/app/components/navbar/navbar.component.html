@@ -1,0 +1,226 @@
+<div class="bg-white" *ngIf="!isLoginOrSignup()">
+  <div class="relative transition-all ease-linear duration-300"
+    [ngClass]="{'-z-[1] opacity-0':!menuOpened,'z-40 opacity-100':menuOpened}" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+
+    <div class="fixed inset-0 z-40 flex transition ease-in-out duration-300 transform"
+      [ngClass]="{'-translate-x-full':!menuOpened,'translate-x-0':menuOpened}">
+
+      <div class="relative flex w-full max-w-xs flex-1 flex-col bg-white pt-5 pb-4 ease-in-out duration-300"
+        [ngClass]="{'opacity-0':!menuOpened,'opacity-100':menuOpened}">
+        <div class="absolute top-0 right-0 -mr-12 pt-2" (click)="toggleMenu()">
+          <button type="button"
+            class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <span class="sr-only">Fermer</span>
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+       <div class="space-y-6 border-t border-gray-200 py-6 px-4" >
+          <div class="flow-root">
+            <a *ngIf=" userType === 'user' || userType === 'vendeur'"routerLink="/articles" routerLinkActive="activeLink" class="link">Articles</a>
+          </div>
+          <div class="flow-root">
+            <a  *ngIf="userType === 'user' || userType === 'vendeur'"routerLink="/categories" routerLinkActive="activeLink" class="link">Catégories</a>
+          </div>
+          <div class="flow-root">
+            <a  *ngIf="userType === 'user' || userType === 'vendeur'" routerLink="/enchere"routerLinkActive="activeLink" class="link">Enchères</a>
+          </div>
+      
+          
+          <div class="flow-root">
+            <a routerLink="/about" routerLinkActive="activeLink" class="link">À propos</a>
+          </div>
+        </div>
+    
+        <div class="space-y-6 border-t border-gray-200 py-6 px-4">
+          <div class="flow-root">
+            <a routerLink="/register" class="link">Créer un compte</a>
+          </div>
+          <div class="flow-root">
+            <a routerLink="/login" class="link">Se connecte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="relative z-10">
+    <nav aria-label="Top">
+      <div class="bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="border-b border-gray-200">
+            <div class="flex h-16 items-center justify-between">
+
+              <div class="hidden lg:flex lg:items-center">
+                <a routerLink="/">
+                  <img class="h-10 w-auto" src="./assets/421631268_713731694254652_2574188580157975096_n.jpg" style=" border-radius: 50%;
+                  width: 70px;
+                  height: 70px;
+                  margin-left: 5px;
+                  margin-right: 5px;
+                  margin-bottom: 10px;
+                  border: 3px solid #f5f5f5;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);" alt="">
+              </a>
+              </div>
+
+              <div class="hidden h-full lg:flex">
+                <div class="ml-8">
+                  <div class="flex h-full justify-center space-x-8">
+                    <div *ngIf="authService.isLoggedIn()"  class="flex items-center space-x-4">
+                      <a *ngIf="userType === 'user' || userType === 'vendeur'" routerLink="/articles" routerLinkActive="activeLink" class="link">Articles</a>           
+                      <a *ngIf="userType === 'user' || userType === 'vendeur'" routerLink="/categories" routerLinkActive="activeLink" class="link">Catégories</a>
+                      <a *ngIf="userType === 'user' || userType === 'vendeur'" routerLink="/enchere" routerLinkActive="activeLink" class="link">Enchères</a>
+                     
+                    </div>
+                      <div *ngIf="authService.isLoggedIn()"  class="flex items-center space-x-4">
+                        <a *ngIf="userType === 'user' " routerLink="/demandevendeur" routerLinkActive="activeLink" class="link">Demande Vendeur</a> 
+                      </div> 
+                      <a  routerLink="/about" routerLinkActive="activeLink" class="link">Historique</a>     
+                      <a class="link">
+                          <span class="enchere-icon" style="background-color: rgb(17, 228, 140);border-radius: 5%;margin: 7%;color: #f5f5f5;"> 
+                            Enchères En Cours
+                            {{nombreEncheresEnCours }}
+                          </span>
+  
+                        </a>
+                        <a class="link">
+                          <span class="enchere-icon" style="background-color: rgb(27, 177, 214);border-radius: 5%;margin: 7%;color: #f5f5f5;"> 
+                            Enchères Terminer
+                            {{nombreEncheresTerminer }}
+                          </span>
+  
+                        </a>
+                        
+                  </div>
+
+                </div>
+              
+              </div>
+              <div class="flex flex-1 items-center lg:hidden">
+                <button (click)="toggleMenu()" type="button" class="-ml-2 rounded-md bg-white p-2 text-gray-400">
+                  <span class="sr-only">Ouvrir menu</span>
+           
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </button>
+              </div>
+              <div class="flex flex-1 items-center justify-end">
+                <div class="flex items-center lg:ml-8">
+                  <div class="flex items-center space-x-8">
+
+                    <div *ngIf="userData" class="relative flex">
+
+                      <div class="cursor-pointer" (click)="toggleUserMenu()">
+                        <img id="avatarButton" type="button" class="w-8 h-8 rounded-full cursor-pointer"
+                          [src]="userData.nom || 'assets/profile.png' " alt="User dropdown">
+                      </div>
+                      <div [ngClass]="{'opacity-100 scale-100':userMenu,'opacity-0 scale-50' : !userMenu}"
+                        class="z-5 transform duration-300 origin-top absolute  top-[150%] right-0 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                          <div>{{userData.prenom}}</div>
+                          <div class="font- truncate">{{userData.email}}</div>
+                        </div>
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                          <li>
+                            <a routerLink="/admin"
+                              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Tableau de bord</a>
+                          </li>
+                          <li>
+                            <a routerLink=""
+                              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Paramètres</a>
+                          </li>
+                          <li>
+                            <a routerLink=""
+                              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                          </li>
+                        </ul>
+                        <div class="py-1" >
+                          <a routerLink=""
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Se déconnecter
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flow-root flex items-center" style="margin-left: 10px; margin-right: 10px;">
+        
+                  
+                </div>
+                                      
+             
+                  <div *ngIf="!authService.isLoggedIn()" class="inline-block spacer">
+                    <a routerLink="/login" routerLinkActive="activeLink" class="link">Se connecter</a>
+                  </div>
+                
+                  <div *ngIf="!authService.isLoggedIn()"  class="inline-block">
+                    <a routerLink="/register" routerLinkActive="activeLink" class="link">Create an account</a>
+                  </div>
+             
+                  <div *ngIf="authService.isLoggedIn()" class="flex items-center space-x-4">
+                    <button (click)="logout()" class="btn btn-danger">
+                      <i class="fas fa-sign-out-alt" style="font-size: 25px;"></i> 
+                    </button>
+                
+                      <a (click)="toggleMessages()" class="nav-linkk">
+                        <i class="fas fa-comments fa" style="font-size: 25px;" ></i>
+                      </a>
+                     <!-- Liste des messages (maximum 3) -->
+                      <div *ngIf="showMessages" class="message-containerrr">
+                        <div *ngFor="let chat of chats.slice(-3)" class="messagee">
+                            <div class="avatar">
+                            <img src="assets/418309886_1495373367860434_1161646263246716743_n.jpg" class="profile-img-card" /> {{ chat.userreceive }}
+                          </div>
+                          <div class="message-content">
+                            <p>{{ chat.message }}</p>
+                            <p class="timestamp">{{ chat.timestamp | date:'short' }}</p>
+                          </div>
+                        </div>
+                        <div class="view-all-link">
+                          <a routerLink="/messages" (click)="toggleMessages()" class="nav-linkk">Voir tous les messages</a>
+                        </div>
+                      </div>
+
+                      <!-- Lien pour voir tous les messages -->
+                        
+                    <span (click)="toggleUserInfo()" class="h-10 relative w-10 grid rounded-full place-content-center bg-black">
+                      <img [src]="this.photoUrl" alt="Image de l'utilisateur"style="width: 40px;height: 40px;border-radius: 50%;margin-right: 10px;">
+                      <div *ngIf="showUserInfo" class="profile-bubble">
+                        <span class="info-pair">
+                          <p class="info-value" style="font-size: larger;text-align: center;"> <i class="fas fa-user" style="font-weight: bold;
+                            margin-bottom: 2px;color: #333;"></i> Hi, {{ capitalizedPassword }}!</p>
+                        </span>
+                        <span >
+                        <img [src]="this.photoUrl" alt="Image de l'utilisateur"style="width:90px;height: 80px;border-radius: 5%;margin-left: 30px; margin-right:20px">
+                      </span>
+                        <span class="info-pair"style="font-size: larger;">                
+                          <p class="info-value">{{ authService.getUserEmail() }}
+                          </p>
+                        </span>
+                        <span class="info-pair" ><!--<i class="fas fa-shield-alt"style="font-weight: bold; margin-bottom: 2px; color: #333;"></i>--> 
+                          <p class="info-value"style="margin-left: 70px;font-size: larger;">{{ authService.getUserType() }}</p>
+                        </span>
+                      </div>
+              
+                    </span>
+  
+                    
+                  </div>                
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <ng-template #notFound>
+    <app-not-found></app-not-found>
+  </ng-template>
+</div>

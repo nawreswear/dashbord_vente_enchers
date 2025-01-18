@@ -1,0 +1,36 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="all" > 
+      <div class="header">
+        <h1  style="font-style: normal;margin-left: 10%;">Liste des demandes vendeurs</h1>
+    </div>
+<table class="table table-striped"class="table table-striped custom-table">
+   <thead>
+      <tr>      
+        <th> <i class="far fa-calendar-alt"></i> Date</th>
+        <th> Etat</th>
+        <th>nom </th>
+        <th > Prenom</th>
+        <th > Action <i class="fas fa-check-circle" style="color: green;"></i>  <i class="fas fa-times-circle" style="color: red;"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let demande of demandesvendeurs">     
+        <td>{{ demande.datedem | date: 'dd/MM/yyyy HH:MM:SS' }}</td>
+        <td>
+          <i class="fas fa-clock" style="background-color: rgb(245, 245, 14); color: rgb(173, 176, 177);font-size: 15px;font-style: normal;">{{ demande.etatdem ? 'Accepte' : ' En attente' }}</i> 
+        </td>
+        
+        <td>{{ demande.user.nom }} </td>
+        <td>{{ demande.user.prenom }}</td> 
+        <td *ngIf="!demande.etatdem"> <!-- Afficher les boutons seulement si l'état est false -->
+          <button class="btn btn-edit" (click)="approuverDemande(demande)"> <i class="fas fa-check"></i> Approve</button>
+          <button class="btn btn-delete" (click)="rejeterVendeur(demande)"> <i class="fas fa-times"></i> Reject</button>
+        </td>
+        <td *ngIf="demande.etatdem"> 
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div> 

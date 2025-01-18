@@ -1,0 +1,213 @@
+
+
+/* Style pour le bouton S'inscrire */
+.btn-primary {
+    margin-top: 20px; /* Espacement du bouton par rapport aux inputs */
+}
+
+/* Style pour les inputs */
+.form-control {
+    margin-bottom: 15px; /* Espacement entre les inputs */
+}
+
+/* Style pour les labels */
+label {
+    font-weight: bold;
+}
+
+/* Style pour le conteneur de la carte */
+.card-container {
+    /* Centre l'image horizontalement et verticalement */
+    width: 100%;
+    max-width: 800px; /* Largeur maximale du formulaire */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Ombre légère pour la carte */
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Style pour div row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligner les éléments sur la même ligne */
+}
+
+/* Style pour div col-md-6 */
+.col-md-6 {
+
+    box-sizing: border-box;
+    margin-bottom: 2px; 
+}
+
+/* Style pour les inputs */
+.form-control {
+    background-color: #f8f9fa; /* Couleur de fond */
+    color: #495057; /* Couleur du texte */
+    border: 1px solid #ced4da; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    margin-bottom: 0; /* Supprimer l'espacement par défaut */
+    padding: 10px; /* Espacement interne */
+    width: 100%; /* Les inputs prennent toute la largeur disponible */
+}
+
+
+/* Style pour les boutons */
+.btn-primary {
+    margin: auto;
+    background-color: #eb16f2; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Suppression de la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    cursor: pointer; /* Curseur de souris */
+    width: 100%; /* Les boutons prennent toute la largeur disponible */
+    margin-bottom: 15px; /* Espacement entre les boutons */
+}
+
+/* Style pour les boutons au survol */
+.btn-primary:hover {
+    margin: 0 auto;
+    background-color: #eb16f2; /* Couleur de fond au survol */
+}
+
+
+.profile-img-card {
+    width: 100px; /* Ajustez la taille de l'image de profil */
+    height: 100px; /* Ajustez la taille de l'image de profil */
+    border-radius: 50%; /* Pour rendre l'image ronde */
+    margin: 0 auto 20px; /* Centre l'image horizontalement et espacement en bas */
+    display: block; /* Permet de centrer l'image */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('/assets/3788fe84a42d004f25a0aaa2ca605602.jpg');
+    background-color: #dfdada;
+    background-size: auto; /* Utiliser l'image de fond comme cover */
+    background-position: center; /* Centrer l'image de fond */
+    align-items: center;
+    height: 100vh; /* Utilisation de la hauteur de l'écran */
+    min-height: 100vh;
+    overflow-y: auto; /* Ajouter une barre de défilement verticale lorsque le contenu dépasse la hauteur de la fenêtre */
+}
+
+/* Style pour les labels */
+.form-group label {
+    margin-bottom: 10px; /* Espacement entre le label et l'input */
+}
+/* Style pour les alertes */
+
+
+/* Style pour les inputs */
+.form-control {
+    margin-bottom: 15px; /* Espacement entre les inputs */
+}
+
+/* Style pour les labels */
+label {
+    font-weight: bold;
+}
+
+
+
+
+
+/* Style pour le conteneur de la carte */
+.card-container {
+  
+    width: 100%;
+    max-width: 700px; /* Largeur maximale du formulaire */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Ombre légère pour la carte */
+}
+
+/* Style pour div row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligner les éléments sur la même ligne */
+}
+
+/* Style pour div col-md-6 */
+.col-md-6 {
+    flex: 0 0 calc(50% - 10px); /* Définir la largeur des colonnes */
+    max-width: calc(50% - 10px); /* Définir la largeur maximale des colonnes */
+    margin-bottom: 20px; /* Espacement entre les colonnes */
+    box-sizing: border-box;
+}
+
+/* Style pour les inputs */
+.form-control {
+    background-color: #f8f9fa; /* Couleur de fond */
+    color: #495057; /* Couleur du texte */
+    border: 1px solid #ced4da; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    margin-bottom: 0; /* Supprimer l'espacement par défaut */
+    padding: 10px; /* Espacement interne */
+    width: 100%; /* Les inputs prennent toute la largeur disponible */
+}
+
+
+/* Style pour les boutons */
+.btn-primary {
+    background-color: #1266ee; /* Couleur de fond violette */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Suppression de la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    cursor: pointer; /* Curseur de souris */
+    width: 100%; /* Les boutons prennent toute la largeur disponible */
+    margin-bottom: 15px; /* Espacement entre les boutons */
+}
+
+/* Style pour les boutons au survol */
+.btn-primary:hover {
+    background-color: #1266ee; /* Couleur de fond violette foncée au survol */
+}
+
+
+/* Style pour les labels */
+.form-group label {
+    margin-bottom: 10px; /* Espacement entre le label et l'input */
+}
+/* Style pour les alertes de type danger */
+/* Style pour les alertes de type danger */
+.alert-danger {
+    color: #721c24; /* Couleur du texte */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px; /* Espacement interne */
+    margin-bottom: 5px; /* Espacement en bas */
+    position: relative; /* Position relative pour le bouton de fermeture */
+}
+
+/* Style pour l'icône de fermeture */
+.alert-danger::before {
+    content: "\f057"; /* Code de l'icône 'times' de Font Awesome */
+    font-family: FontAwesome; /* Utilisation de Font Awesome pour les icônes */
+    position: absolute; /* Position absolue pour l'icône */
+    top: 50%; /* Alignement vertical */
+    right: 15px; /* Alignement à droite */
+    transform: translateY(-50%); /* Ajustement de l'alignement vertical */
+    font-size: 18px; /* Taille de l'icône */
+    cursor: pointer; /* Curseur de souris */
+    color: #721c24; /* Couleur de l'icône */
+    transition: color 0.3s; /* Transition de couleur pour l'icône */
+}
+
+/* Style pour l'icône de fermeture au survol */
+.alert-danger:hover::before {
+    color: #5a121b; /* Changement de couleur de l'icône au survol */
+}
+
+/* Style pour le contenu du message */
+.alert-danger p {
+    margin-bottom: 0; /* Supprimer l'espacement en bas du paragraphe */
+}

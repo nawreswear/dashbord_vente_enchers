@@ -1,0 +1,141 @@
+
+.navbar-profile i {
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-right: 5px; /* Add spacing between the icon and the text */
+  }
+  
+  .fly-item {
+    position: absolute;
+    top: -6.5px;
+    right: -6.5px;
+    height: 19px;
+    width: 19px;
+    font-size: 12px;
+    border-radius: 50%;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+.ml-auto{
+  left: 100%;;
+}
+.trinagleErr{
+    transition: all ease-in 0.3s;
+}
+.text-xl {
+    font-size: 1.25rem; /* Adjust the font size as needed */
+  }
+  
+  .text-white {
+    color: #ffffff; /* Set the text color to white */
+  }
+  
+  
+  .mr-2 {
+    position: 500px;
+    margin-right: 0.5rem; /* Adjust the right margin as needed */
+  }
+  
+.errors::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -25px;
+    
+    right: 8px;
+    border-top: 15px solid transparent;
+    /* border-bottom: 15px solid rgb(239 68 68 / 5); */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid black; 
+    
+}
+.p{
+    color: bisque;
+}
+.profile-bubble {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 220px;
+    height: 220px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    z-index: 10;
+    color:cornflowerblue;
+  }
+  
+  .profile-bubble p {
+    margin-bottom: 10px;
+  }
+  
+  .profile-bubble p:last-child {
+    margin-bottom: 0;
+  }
+  .info-label {
+    color: #090909; /* Couleur de texte pour les étiquettes d'information */
+    font-size: 16px;
+    font-weight: bold; /* Taille de police pour les étiquettes d'information */
+  }
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent; /* Ajustez la taille de la flèche selon vos préférences */
+    border-right: 5px solid transparent; /* Ajustez la taille de la flèche selon vos préférences */
+    border-top: 7px solid #fff; /* Couleur et taille de la flèche */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .info-value {
+    color: #007bff; /* Couleur de texte différente pour les valeurs d'information */
+    font-size: 16px; /* Taille de police différente pour les valeurs d'information */
+    font-weight: bold; /* Mettez en gras les valeurs d'information */
+  }
+  .modify-button{
+    color: #150320; /* Couleur de texte différente pour les valeurs d'information */
+    font-size: 16px; /* Taille de police différente pour les valeurs d'information */
+    font-weight: bold;
+   background-color:darkgrey;
+  }
+  p{
+    top:12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(26, 96, 227);
+  }
+  .logout-bubble {
+    position: relative;
+}
+
+.logout-bubble::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+}
+.logout-bubble {
+    position: relative;
+}
+
+.logout-bubble::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background-color: red; /* Adjust color as needed */
+    border-radius: 50%;
+}

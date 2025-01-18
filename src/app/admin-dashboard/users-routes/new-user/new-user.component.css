@@ -1,0 +1,165 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #9b9898;
+}
+
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.new-user-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-dialog {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #00398f;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.btn-primary {
+ 
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.table th,
+.table td {
+    padding: 12px 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+.table td {
+    background-color: #f9f9f9;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    min-width: 100px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #219c35;
+    margin-right: 10px;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-close {
+    background-color: #a04545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-close:hover {
+    background-color: #872727;
+}

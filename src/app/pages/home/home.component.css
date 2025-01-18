@@ -1,0 +1,529 @@
+/* Pour les écrans de taille moyenne et plus grands */
+@media (min-width: 768px) {
+  .navbar-images {
+    height: 60vh; /* Ajustez la hauteur de l'image en fonction de la taille de l'écran */
+  }
+}
+
+/* Pour les écrans plus petits */
+@media (max-width: 767px) {
+  .navbar-images {
+    height: 40vh; /* Ajustez la hauteur de l'image en fonction de la taille de l'écran */
+  }
+
+  .category-container {
+    flex-direction: column; /* Afficher les catégories dans une colonne sur les écrans plus petits */
+  }
+
+  .category-card {
+    width: 100%; /* Ajustez la largeur de la carte pour qu'elle occupe toute la largeur de l'écran */
+    margin-right: 0; /* Supprimez la marge de droite pour que les cartes s'empilent correctement */
+    margin-bottom: 20px; /* Espacement entre les cartes */
+  }
+
+  .row {
+    grid-template-columns: 1fr; /* Afficher une seule colonne de cartes sur les écrans plus petits */
+  }
+
+  .card-containerr {
+    flex-direction: column; /* Afficher les articles dans une colonne sur les écrans plus petits */
+  }
+
+  .article-details-container {
+    width: 90%; /* Ajustez la largeur du conteneur des détails de l'article */
+    margin-left: auto; /* Centrez horizontalement sur les écrans plus petits */
+    margin-right: auto; /* Centrez horizontalement sur les écrans plus petits */
+  }
+}
+
+.navbar-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.category-image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.category-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #fff; /* Couleur du texte */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée sur le texte */
+  font-weight: bold;
+}
+
+.nav-arrow {
+  background-color: #fff; /* Couleur de fond du bouton */
+  color: #333; /* Couleur du texte */
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%; /* Pour rendre le bouton rond */
+  margin: 0 10px; /* Marge entre les boutons */
+}
+
+.nav-arrow:hover {
+  background-color: #f0f0f0; /* Couleur de fond du bouton au survol */
+}
+
+.pt-24 {
+  /* Ajustez le padding-top pour laisser de l'espace pour l'image */
+  padding-top: 5px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+}
+.absolute inset-0 object-cover object-center w-full h-full{
+  background-position: center; /* Centrer l'image de fond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Utilisation de la hauteur de l'écran */
+  margin: 0;
+  min-height: 100vh;
+
+}
+
+.navbar-images {
+  position: relative;
+  height: 100%; /* Ajustez la hauteur en fonction de vos besoins */
+  width: auto;
+}
+
+.navbar-image {
+  height: 100%; /* Ajustez la taille de l'image en fonction de la hauteur de la barre de navigation */
+  width: auto;
+  position: relative;
+  z-index: 1; /* Assurez-vous que l'image est au-dessus des flèches */
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 150px; 
+  color: #fff; /* Couleur des flèches */
+ 
+  cursor: pointer;
+  z-index: 2; /* Assurez-vous que les flèches sont au-dessus de l'image */
+}
+
+.nav-arrow:hover {
+  color: #ccc; /* Couleur des flèches au survol */
+}
+
+.nav-arrow:first-child {
+  left: 0;
+}
+
+.nav-arrow:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-arrow:last-child {
+  right: 0;
+}
+
+/* Style du conteneur de tableau */
+.container{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 40px;
+  padding-bottom: 10%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 35px;
+  width: auto;
+
+}
+@media (min-width: 768px) {
+  .row {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust for wider screens */
+  }
+}
+@media (max-width: 767px) {
+  .row {
+      grid-template-columns: 1fr;  /* Stack cards vertically on small screens */
+  }
+
+  .card {
+      margin-bottom: 1rem;  /* Adjust spacing for vertical layout */
+  }
+}
+@media (max-width:  768px) {
+  .cardd { width: 100%; /* Largeur de la carte à 100% sur les écrans plus petits */
+    height: 50%;
+  margin-left: 0; /* Supprimez la marge à gauche sur les écrans plus petits */
+  margin-right: 0; /* Supprimez la marge à droite sur les écrans plus petits */
+  margin-bottom: 20px; /* Espacement entre les cartes en bas sur les écrans plus petits */
+  }
+}
+.row {
+  display: grid; /* Base layout for all screen sizes */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Adjust card width */
+  grid-gap: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Typography */
+.page-title {
+  font-family: 'Open Sans', sans-serif; /* Example font */
+  font-size: 1.5rem; /* Increased size for prominence */
+  font-weight: 600;
+  color: #343a40; /* Adjust as needed */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-family: 'Lato', serif; /* Example font */
+  font-size: 1rem;
+  color: #6c757d; /* Adjust as needed */
+}
+/* Button styling */
+.btn-primary {
+    background-color: #007bff; /* Primary brand color */
+    border: none;
+    border-radius: 5px; /* Slight rounding */
+    color: #fff;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0062cc; /* Adjust for hover effect */
+}
+
+/* Badge styling */
+.badge-warning {
+    background-color: #ffe08c; /* Lighter warning color */
+    color: #212529; /* Ensure text contrast */
+    border-radius: 5px;
+}
+.auction-image-wrapper {
+  margin-bottom: 1rem;  /* Add space below image */
+}
+
+.img-fluid {
+  width: 100%;  /* Make image responsive */
+  height: auto;
+}
+
+.card-containerr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:start;
+}
+
+.cardd {
+  width: 20%; /* Largeur fixe de chaque carte */
+  height: 90%; /* Hauteur fixe de chaque carte */
+  margin-right: 5px; 
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 15px; /* Espacement entre les cartes en bas */
+  border: 1px solid #ccc; /* Bordure de la carte */
+  border-radius: 5px; /* Coins arrondis de la carte */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre de la carte */
+}
+  /* Réglages spécifiques pour les écrans plus petits */
+
+.primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  margin-right: 150px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.secondary {
+  background-color: #f1141f;
+  color: #fff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.delete-button {
+  background-color: #dc3545; /* Red */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker red */
+}
+
+.article-body {
+  padding: 10px;
+}
+.article-details-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.article-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.articles-container{
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.article-description {
+  margin-bottom: 5px;
+  color: #080808;
+}
+
+.article-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-price {
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.article-availability {
+  color: #333;
+  margin-bottom: 5px;
+  margin-top: 1px;
+}
+
+.article-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+}
+.cardd:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-bodyy {
+  padding: 15px; /* Espacement augmenté pour une meilleure lisibilité */
+  margin-bottom: 10px;
+}
+.pt-24 {
+  /* Ajustez le padding-top pour laisser de l'espace pour l'image */
+  padding-top: 5px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+}
+.absolute inset-0 object-cover object-center w-full h-full{
+  background-position: center; /* Centrer l'image de fond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Utilisation de la hauteur de l'écran */
+  margin: 0;
+  min-height: 100vh;
+
+}
+
+.navbar-images {
+  position: relative;
+  height: 100%; /* Ajustez la hauteur en fonction de vos besoins */
+  width: auto;
+}
+
+.navbar-image {
+  height: 100%; /* Ajustez la taille de l'image en fonction de la hauteur de la barre de navigation */
+  width: auto;
+  position: relative;
+  z-index: 1; /* Assurez-vous que l'image est au-dessus des flèches */
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 150px; 
+  color: #fff; /* Couleur des flèches */
+ 
+  cursor: pointer;
+  z-index: 2; /* Assurez-vous que les flèches sont au-dessus de l'image */
+}
+
+.nav-arrow:hover {
+  color: #ccc; /* Couleur des flèches au survol */
+}
+
+.nav-arrow:first-child {
+  left: 0;
+}
+
+.nav-arrow:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-arrow:last-child {
+  right: 0;
+}
+/* Category card styles */
+.category-container {
+  display: flex; /* Affichage en ligne des catégories */
+  flex-wrap: wrap; /* Permettre le passage à la ligne des catégories si nécessaire */
+  justify-content: space-between; /* Espacement uniforme entre les catégories */
+}
+
+.category-card {
+  width: calc(48% - 20px); /* Ajuste la largeur pour deux cartes par ligne */
+  margin-bottom: 40px; /* Espacement entre chaque ligne de catégories */
+  overflow: hidden; /* Empêche le contenu de déborder */
+  transition: transform 0.9s ease-in-out; /* Transition pour l'effet de zoom */
+  position: relative;
+  border-radius: 0.5rem; /* Ajoute un léger arrondi aux bords */
+  margin-right: 20px; /* Espacement entre les cartes */
+}
+
+/* Animation de zoom lorsqu'on survole la carte */
+.category-card:hover {
+  transform: scale(1.3);
+}
+
+/* Style de l'image de la carte */
+.category-card__image {
+  width: 100%; /* Assure que l'image remplit complètement le conteneur */
+  height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+  transition: transform 0.3s ease; /* Animation fluide de transition */
+}
+
+/* Effet de zoom sur l'image lorsqu'on survole la carte */
+.category-card:hover .category-card__image {
+  transform: scale(1.1);
+}
+
+/* Style du contenu de la carte */
+.category-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Hauteur du contenu */
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  color: #fff; /* Couleur du texte */
+  padding: 1rem; /* Rembourrage */
+  text-align: center;
+  opacity: 0; /* Caché initialement */
+  transition: opacity 0.3s ease-in-out; /* Transition en douceur pour l'effet de survol */
+}
+
+/* Afficher le contenu lorsqu'on survole */
+.category-card:hover .category-card__content {
+  opacity: 1;
+}
+
+/* Style spécifique pour les cartes sur la première rangée */
+.category-container .category-card:nth-child(odd) {
+  margin-right: 0; /* Pas de marge à droite pour la première carte de chaque ligne */
+}
+.min-w-screen-xl {
+  display: flex; /* Affichage en ligne des catégories */
+  flex-wrap: wrap; /* Permettre le passage à la ligne */
+  justify-content: space-between; /* Espacement uniforme entre les éléments */
+}
+
+/* Style des cartes d'article */
+.article-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.article-card p {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.article-card .price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff6600;
+}

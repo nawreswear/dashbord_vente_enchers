@@ -1,0 +1,57 @@
+<div >
+    <div mat-dialog-title>
+        <button mat-icon-button class="fas fa-times" style="color: rgb(178, 34, 9); border-radius: 50%;margin: 2%; " (click)="onClose()">
+           
+        </button>
+        <h1 style="text-align: center;">Détails d'un article</h1>
+    </div>
+    <style>
+        .article-image {
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 50%;
+        }
+        .details {
+            color: #333;
+        }
+        .details p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .details p strong {
+            font-weight: bold;
+        }
+        .details p.statut {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .details p.statut.non-disponible {
+            color: #f44336;
+        }
+        @media (max-width: 600px) {
+            .content-wrapper {
+                padding: 15px;
+            }
+            .details p {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+   
+    <div class="content-wrapper" style="margin: 5%;">
+        <img [src]="data.photo" alt="Article Image" class="article-image">
+        <div class="details">
+            <p style="margin: 2%;"><strong> Titre : </strong>{{ data.titre }}</p>
+            <p class="statut" style="margin: 2%;"> <strong>Statut : </strong>{{ data.statut ? 'Disponible' : 'Non disponible' }}</p>
+            <p  style="margin: 2%;"> <strong> Description : </strong>{{ data.description }}</p>
+            <p style="margin: 2%;"> <strong>Quantité : </strong>{{ data.quantiter }}</p>
+            <p style="margin: 2%;"> <strong>Prix : </strong>{{ data.prix }} Dt</p>
+            <p  style="margin: 2%;"> <strong>Catégorie : </strong>{{ data.categorie.titre }}</p>
+        </div>
+    </div>
+
+</div>
+

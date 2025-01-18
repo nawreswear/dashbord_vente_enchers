@@ -1,0 +1,50 @@
+/* Styles pour l'ensemble de la boîte de réception */
+.inbox-container {
+  display: flex;
+}
+
+/* Styles pour la liste des messages */
+.conversation-container {
+  flex: 1;
+  overflow-y: auto; /* Ajouter une barre de défilement vertical si nécessaire */
+  padding: 20px;
+}
+
+.message-container {
+  margin-bottom: 10px;
+}
+
+.message {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.message-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+
+/* Styles pour le formulaire d'envoi de messages */
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.message-input input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.message-input button {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}

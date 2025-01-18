@@ -1,0 +1,538 @@
+.container {
+    padding: 40px; /* Increase padding to add more space */
+    width: 300%;
+    height: 300%;
+    padding: 20px;
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.table {
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-top: -67rem; 
+    height: 10%;
+    width: 79%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+
+  .table td {
+  
+    border: 1px solid #ddd;
+    padding: 15px; /* Increase padding for spacing */
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .custom-table {
+    width: 500%; /* Increase the width of the custom table */
+    height: 100%;
+    border-collapse: collapse;
+    border-spacing: 20px; /* Adjust spacing between cells */
+  }
+  
+    .header {
+        top:110px;
+        margin-left: 10%;
+        text-align: center ;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px; /* Ajustez la taille de la police selon vos préférences */
+        margin-bottom: 30px;
+        position: absolute; /* Position absolue pour centrer le titre */   
+        left: 50%; /* Position horizontale au milieu de la page */
+        transform: translate(-50%, -50%); /* Déplacement de -50% de la largeur et de la hauteur du titre pour le centrer */
+        z-index: 1000; /* Pour s'assurer que le titre est au-dessus des autres éléments */
+        font-family: Arial, Helvetica, sans-serif; /* Famille de police */
+       
+        color: #000000; /* Couleur du texte */
+        text-align: center; /* Centrage du texte */
+      }
+      
+.btn-add {
+    top:169px;
+    margin-right: 60px;
+    margin-top: 69px;
+    margin-bottom: 15px;
+  }  
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+
+
+.btn i {
+    margin-right: 5px;
+}
+.btn-add {
+    position: absolute;/* Position fixe pour maintenir le bouton en haut */
+    top: 95px; /* Distance du haut de la page */
+    right: 66%;/* Distance de la droite de la page */
+    z-index: 1000; /* Pour s'assurer que le bouton est au-dessus des autres éléments */
+    background-color: rgb(92, 90, 221);/* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s ease; /* Transition de couleur de fond en douceur */
+    font-weight: bold;
+   
+  }
+  
+  .btn-add:hover {
+    background-color: #0056b3; /* Changement de couleur de fond au survol */
+  }
+.btn-view-details {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px; 
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-details i {
+    margin-right: 5px; 
+}
+
+.btn-view-details:hover {
+    background-color: #0056b3;
+}
+.alert-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.alert {
+    background-color: #ffffff; /* Couleur de fond de l'alerte */
+    padding: 10px 20px;
+    border-radius: 10px; 
+    color: #000000; /* Couleur du texte */
+}
+
+.btn-ok {
+    margin-top: 10px; /* Espacement entre l'alerte et le bouton */
+    background-color: #dc3545; /* Couleur de fond du bouton OK */
+    color: #ffffff; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.grid-container {
+    width: 220%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.grid-container-v{
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+
+.btn-close {
+    background-color: #a04545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Styles for the sidebar container */
+.sidebar {
+    width: 190%;
+    background-color: #0a2250;
+    height: 1200px;
+    padding: 20px;
+    z-index: 20;
+    margin-left: -20px;
+}
+
+/* Grid item */
+.grid-item {
+    width: 100%;
+}
+
+/* Titles */
+h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Subtitles */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Styles for the sidebar header */
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for the sidebar title */
+.sidebar-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover effect for sidebar title */
+.sidebar-title:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the sidebar subtitle */
+.sidebar-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Styles for the sidebar list */
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Styles for the sidebar item */
+.sidebar-item {
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for sidebar item */
+.sidebar-item:hover {
+    background-color: rgba(31, 13, 190, 0.1);
+}
+
+/* Styles for the sidebar link */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ccc;
+}
+
+/* Styles for the sidebar icon */
+.sidebar-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Styles for the sidebar text */
+.sidebar-text {
+    font-size: 16px;
+}
+
+
+/* Adjustments for the input form */
+.form-group {
+    margin-bottom: 10px; /* Add margin bottom */
+    margin-top: 10px;
+}
+
+/* Hide the input form initially */
+.new-cat-section {
+    display:grid;
+}
+
+
+/* Modifier la taille de la police et la couleur du titre */
+h2 {
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+     margin-left: 35%;
+}
+/* Styling pour les icônes */
+.fa-edit{
+    color: #0ed64a; /* Couleur bleue */
+    font-size: 20px; /* Taille de police */
+    cursor: pointer; /* Curseur de souris sur survol */
+    transition: color 0.3s ease; 
+}
+.fa-trash {
+    color: #000000; /* Couleur bleue */
+    font-size: 20px; /* Taille de police */
+    cursor: pointer; /* Curseur de souris sur survol */
+    transition: color 0.3s ease; /* Transition en douceur */
+}
+
+.fa-edit:hover,
+.fa-trash:hover {
+    color: #0056b3; /* Changement de couleur au survol */
+}
+
+
+/* Styling pour les étiquettes */
+label {
+    font-size: 16px; /* Taille de la police */
+    color: #495057; /* Couleur de texte sombre */
+}
+
+/* Styling pour les champs de formulaire */
+.form-control {
+    font-size: 16px; /* Taille de la police */
+    color: #495057; /* Couleur de texte sombre */
+    background-color: #f8f9fa; /* Couleur de fond */
+    border: 1px solid #ced4da; /* Bordure légère */
+}
+.btn-edit {
+    color: #fff;
+    background-color: #219c35;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 8px 16px; 
+    font-size: 14px;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 5px;
+    padding: 8px 16px; 
+    font-size: 14px;
+}
+.button-container {
+    display: flex;
+  }
+  
+  .button-container button {
+    margin-right: 5px; /* Espacement entre les boutons */
+  }
+  
+/* Styling pour les boutons */
+.btn-primary, .btn-secondary {
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    text-transform: uppercase; /* Convertir en majuscules */
+}
+
+.btn-primary {
+    background-color:#09721b; /* Couleur bleue */
+    color: #fff; /* Texte blanc */
+ 
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Couleur grise */
+    color: #fff; /* Texte blanc */
+    border: none; /* Supprimer la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s ease;
+}
+
+/* Styling pour la section principale du formulaire */
+.card {
+    background-color: #fff; /* Couleur de fond blanche */
+    border: 1px solid #dee2e6; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 20px; /* Rembourrage */
+}
+
+/* Styling pour les groupes de formulaire */
+.form-group {
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Styling pour les messages d'erreur */
+.error-message {
+    color: #dc3545; /* Couleur rouge */
+    font-size: 14px; /* Taille de la police */
+    margin-top: 5px; /* Marge supérieure */
+}
+/* Image styling */
+img {
+    max-width: 100px; /* Limit image width for responsiveness */
+    max-height: 100px; /* Limit image height for consistent sizing */
+    border-radius: 4px; /* Add rounded corners */
+}
+
+/* Buttons styling */
+button {
+    margin: 5px; /* Add spacing between buttons */
+    padding: 10px 16px; /* Adjust padding for button size */
+    border: none; /* Remove default button borders */
+    border-radius: 4px; /* Add rounded corners */
+    cursor: pointer; /* Indicate clickable behavior */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button:hover {
+    filter: brightness(90%); /* Darken button on hover */
+}
+/* Loading message styling */
+.loading {
+    text-align: center; /* Center the loading message */
+    font-weight: bold; /* Emphasize the loading text */
+    margin-top: 20px; /* Add some margin for spacing */
+}
+
+/* Edit form styling */
+form {
+    display: flex; /* Arrange form elements horizontally */
+    flex-direction: column; /* Stack elements vertically */
+    width: 50%; /* Adjust form width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding for better spacing */
+    border: 1px solid #dee2e6; /* Thin border for the form */
+    border-radius: 4px; /* Rounded corners for a smoother look */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Add spacing between form groups */
+}
+
+label {
+    display: block; /* Display labels on their own line */
+    margin-bottom: 8px; /* Add space between label and input */
+    font-weight: bold; /* Bold label text */
+}
+
+.form-control {
+    width: 100%; /* Fill the entire form group width */
+    padding: 10px; /* Add padding for user input */
+    border: 1px solid #ced4da; /* Light border for input fields */
+    border-radius: 4px; /* Rounded corners for form elements */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Success message styling */
+.success-message {
+    color: #28a745; /* Green success message color */
+    font-weight: bold; /* Emphasize success message */
+}
+
+/* Style des étiquettes */
+label {
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Style des champs de formulaire */
+.input-field {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Espacement inférieur */
+    border: 1px solid #ced4da; /* Bordure légère */
+    border-radius: 4px; /* Coins arrondis */
+    transition: border-color 0.3s ease; /* Transition de couleur de bordure en douceur */
+}
+
+.input-field:focus {
+    border-color: #007bff; /* Couleur de bordure lorsqu'il est en focus */
+    outline: none; /* Supprimer le contour de focus par défaut */
+}
+
+/* Style du bouton Soumettre */
+.submit-btn {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s ease; /* Transition de couleur de fond en douceur */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Changement de couleur de fond au survol */
+}
+.form-container {
+    position: absolute;
+    top: 65%;
+    left: 60.5%;
+    transform: translate(-50%, -50%);
+    width: 79%;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  } 
+  .form-container input[type="text"]:focus {
+    border-color: #66afe9;
+    outline: none;
+  }
+  .form-containerr{
+    position: absolute;
+    top: 69%;
+    left: 59%;
+   padding-bottom: 10px;
+    transform: translate(-50%, -50%);
+    width: 79%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+   
+  .loading {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+/* Style du bouton Annuler */
+.cancel-btn {
+    background-color: #6c757d; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s ease; /* Transition de couleur de fond en douceur */
+}
+
+.cancel-btn:hover {
+    background-color: #495057; /* Changement de couleur de fond au survol */
+}

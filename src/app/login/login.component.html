@@ -1,0 +1,81 @@
+<body> 
+  <div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="assets/418610699_1402707163707747_6748242843023703933_n.jpg"
+      class="profile-img-card"
+    />
+    <form
+      name="form"
+      (ngSubmit)="onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          #email="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && email.invalid"
+        >
+          Email is required!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+           Mot de passe</label>
+        <input
+        
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+     
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && password.invalid"
+        >
+          <div *ngIf="password.errors">Password is required</div>
+          <div *ngIf="password.errors">
+            Password must be at least 6 characters
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Login</button>
+      </div>
+      <div class="form-group">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && isLoginFailed">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <a style="font-size: large;font-family:'Courier New', Courier, monospace ;" (click)="goToRegister()">Register</a>
+    </div>
+  
+  
+  </form>
+  </div>
+</div>
+</body>

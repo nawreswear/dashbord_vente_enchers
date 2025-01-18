@@ -1,0 +1,242 @@
+.content {
+    display: flex;
+  }
+  
+  .container {
+    flex: 1;
+    margin: 20px;
+    margin-left:20%;
+    margin-top: -70rem; 
+    height: 10%;
+    width: 90%;
+    border-collapse: collapse;
+  }
+  .header {
+    margin-left: 5%;
+    margin-top: 15px;
+    top:15%;
+    text-align: center ;
+    font-size: 24px; /* Ajustez la taille de la police selon vos préférences */
+    margin-bottom: 25px;
+    position: absolute; /* Position absolue pour centrer le titre */   
+    left: 50%; /* Position horizontale au milieu de la page */
+    transform: translate(-50%, -50%); /* Déplacement de -50% de la largeur et de la hauteur du titre pour le centrer */
+    z-index: 1000; /* Pour s'assurer que le titre est au-dessus des autres éléments */
+    font-family: Arial, Helvetica, sans-serif; /* Famille de police */
+    color: #000000; /* Couleur du texte */
+    text-align: center; /* Centrage du texte */
+    font-size: 1.5rem; /* Adjust font size */
+    color: #333; /* Darker text color */
+  }
+ /* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+ 
+  .warning {
+    background-color: #ffcccc; /* Couleur de fond */
+    border: 1px solid #ff9999; /* Bordure */
+    padding: 10px; /* Espacement intérieur */
+    color: #cc0000; /* Couleur du texte */
+
+  }
+  
+  
+  /* Content Styles */
+  .content {
+    display: flex; /* Flexbox layout for container and sidebar */
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    flex: 0 0 200px; /* Fixed sidebar width */
+    margin-right: 20px; /* Spacing between sidebar and content */
+    /* Add background color or styling as needed */
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1; /* Fills remaining space */
+  }
+  
+  /* Signalement List Styles */
+  .signalement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .signalement-list li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .signalement-list li:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .signalement-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .signalement-info span {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  .signalement-message {
+    margin-top: 10px;
+    word-break: break-word;
+  }
+  
+  /* Pagination Styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination li {
+    list-style: none;
+    margin: 0 5px;
+  }
+  
+  .pagination a {
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .pagination a:hover {
+    background-color: #eee;
+  }
+  
+  .pagination a.active {
+    background-color: #333;
+    color: #fff;
+  }
+  .content {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+  /* Overall layout */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light blue background */
+  }
+  
+  .content {
+    display: flex; /* Flexbox for container and sidebar */
+    margin: 0 auto; /* Center the content horizontally */
+    background-color: #fff;
+    border-radius: 0; /* Remove border radius */
+    box-shadow: none; /* Remove box shadow */
+  }
+  
+  .sidebar {
+    flex: 0 0 200px; /* Fixed sidebar width */
+    margin-right: 20px; /* Spacing between sidebar and content */
+    /* Add background color or styling as needed */
+  }
+  
+  .main-content {
+    flex: 1; /* Fills remaining space */
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%; /* Make the table span the entire width of the page */
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f5; /* Lighter blue for table header */
+    color: #333; /* Darker text color for table headers */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f2f2f5; /* Lighter blue on hover */
+  }
+  
+
+  
+  /* User profile image */
+  td img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Table borders */
+  .container td {
+    border-left: 1px solid #ddd;
+  }
+  
+  /* Hover effect with subtle shadow */
+  tr:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* User profile image hover effect */
+  td img:hover {
+    opacity: 0.8;
+  }
+  
+
+  
+  

@@ -1,0 +1,109 @@
+.container {
+    width: 800vw; /* Set a fixed width */
+    height: 140%;
+  }
+  
+  .fas.fa-times {
+   
+    margin-left: 450px;
+    color: black;
+    font-size: 1em; /* Adjust size as needed */
+  }
+  .article-price {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  mat-dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  mat-dialog-title h1 {
+    margin: 0;
+  }
+  
+  mat-dialog-title button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .content-wrapper {
+    display: flex;
+
+  }
+  
+  .article-image {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  mat-dialog-content {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  mat-dialog-content p {
+    margin: 8px 0;
+  }
+  
+  mat-dialog-content p:first-child {
+    margin-top: 0;
+  }
+  
+  mat-dialog-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  mat-dialog-content .statut {
+    font-weight: bold;
+    color: black;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  
+  mat-dialog-actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  mat-dialog-container {
+    max-width: none; /* Remove max-width restriction */
+    width: 100%; /* Set width to 100% */
+    height: 100%; /* Set height to 100% */
+  }
+  mat-dialog-actions button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+
+
+
+
+
+
+  
+  

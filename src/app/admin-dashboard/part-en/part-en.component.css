@@ -1,0 +1,230 @@
+/* Default styles */
+.container {
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+/* Media query for small screens (< 768px) */
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 100%; /* Allow container to take full width on small screens */
+  }
+
+  .table {
+    width: 100%; /* Make table occupy full width */
+    overflow-x: auto;
+ 
+     /* Enable horizontal scrolling if content overflows */
+  }
+
+  /* Adjust other styles as needed for small screens */
+}
+
+/* Media query for medium screens (≥ 768px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 750px;
+  }
+
+  /* Adjust styles for medium screens */
+}
+
+/* Media query for large screens (≥ 992px) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 970px;
+  }
+
+  /* Adjust styles for large screens */
+}
+
+/* Media query for extra large screens (≥ 1200px) */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+.table-container{
+  margin-left: 0px;
+}
+  /* Adjust styles for extra large screens */
+}
+
+.animated {
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+.form {
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+.form-error {
+  color: red;
+  font-size: 12px;
+}
+.header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.footer {
+  background-color: var(--light-color);
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--accent-color);
+  }
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-content {
+  margin-bottom: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  margin-left: 20px;
+}
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+:root {
+  --primary-color: #007bff; /* Bleu */
+  --secondary-color: #777; /* Gris foncé */
+  --light-color: #f8f9fa; /* Gris clair */
+  --accent-color: #ff9800; /* Orange */
+}
+            
+.grid-container {
+  margin-top: -75rem; 
+  margin-left: 250px;
+}
+.thead-dark th {
+  color: #fff;
+  background-color: #8b939c;
+ 
+}
+.header {
+font-weight: normal;
+  position: absolute; /* Position absolue pour centrer le titre */
+  top: 80px; /* Position verticale au milieu de la page */
+  left: 50%; /* Position horizontale au milieu de la page */
+  transform: translate(-50%, -50%); /* Déplacement de -50% de la largeur et de la hauteur du titre pour le centrer */
+  z-index: 1000; /* Pour s'assurer que le titre est au-dessus des autres éléments */
+  font-family: Arial, Helvetica, sans-serif; /* Famille de police */
+  font-size: 24px; /* Taille du texte */
+  color: #000000; /* Couleur du texte */
+  text-align: center; /* Centrage du texte */
+  margin-top: 40px;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+.table-container {
+  /* Vos styles actuels */
+  margin-top: 90px; 
+}
+.table td,
+.table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+
+}
+.table{
+  margin-left: 2px;
+  margin-top: -74rem; 
+   height: 10%;
+   width: 71%;
+   border-collapse: collapse;
+}
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 40px;
+  margin: 0; /* Adjust spacing as needed */
+}
+/* Media query for small screens (< 768px) */
+@media screen and (max-width: 767px) {
+  .table {
+    margin-left: 0px; /* Remove left margin on small screens */
+  }
+}
+/* Style pour l'image des articles */
+.article-image {
+border-radius: 20%;
+width: 100px; /* Largeur de l'image */
+height: 100px; /* Hauteur de l'image */
+object-fit: cover; /* Redimensionne l'image pour remplir le conteneur tout en préservant son aspect */
+}

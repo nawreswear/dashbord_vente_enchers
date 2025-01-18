@@ -1,0 +1,105 @@
+
+/* Autres styles */
+.container  {
+    margin-top: 15%;
+    margin-left: 20%;
+    margin-top: -69rem; 
+    height: 10%;
+    width: 79%;
+
+  }
+
+  .table {
+    margin-top: 30%;
+    margin-left: 1%;
+    margin-top: -50rem; 
+    height: 10%;
+    width: 79%;
+    border-collapse: collapse;
+  }
+  
+.table {
+    width: 100%;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* General page styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Title styles */
+h1 {
+  font-weight: lighter;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  position: absolute;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: #000000;
+}
+
+
+
+/* Table styles */
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Table header styles */
+table.table thead th {
+  background-color: #f0f0f0;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+
+/* Table body styles */
+table.table tbody tr {
+  background-color: #fff;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Table cell styles */
+table.table td {
+  vertical-align: middle;
+}
+
+/* Status icon styles */
+.fas.fa-clock {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+}
+
+/* Status icon colors */
+.fas.fa-clock.en-attente {
+  background-color: rgb(245, 245, 14);
+  color: rgb(173, 176, 177);
+}
+
+.fas.fa-clock.accepte {
+  background-color: rgb(57, 230, 128);
+  color: rgb(0, 128, 0);
+}

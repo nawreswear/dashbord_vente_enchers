@@ -1,0 +1,96 @@
+<body>
+<div class="col-md-12">
+    <div class="card card-container">
+        <div style="position:static;">
+        <img id="profile-img" src="assets/418269410_1385201588788544_3815866697510826298_n.png" class="profile-img-card" />
+        </div>
+        <form *ngIf="!isSuccessful" (ngSubmit)="onSubmit()" #f="ngForm" name="signupForm" novalidate>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" name="nom" [(ngModel)]="form.nom" required minlength="3" maxlength="20" #nom="ngModel" />
+                        <div *ngIf="f.submitted && nom.invalid" class="alert alert-danger">
+                            Nom est requis 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" class="form-control" name="prenom" [(ngModel)]="form.prenom" required #prenom="ngModel" />
+                        <div *ngIf="f.submitted && prenom.invalid" class="alert alert-danger">
+                            Prénom est requis.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cin">CIN</label>
+                        <input type="text" class="form-control" name="cin" [(ngModel)]="form.cin" required #cin="ngModel" />
+                        <div *ngIf="f.submitted && cin.invalid" class="alert alert-danger">
+                            Cin est requis.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" />
+                        <div *ngIf="f.submitted && email.invalid" class="alert alert-danger">
+                            Email est requis 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="tel">Téléphone</label>
+                        <input type="tel" class="form-control" name="tel" [(ngModel)]="form.tel" required #tel="ngModel" />
+                        <div *ngIf="f.submitted && tel.invalid" class="alert alert-danger">
+                            Téléphone est requis.
+                        </div>
+                    </div>
+                   
+                  
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+                        <div *ngIf="f.submitted && password.invalid" class="alert alert-danger">
+                            Mot de passe est requis 
+                        </div>
+                    </div>
+                  
+                    
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select class="form-control" name="type" [(ngModel)]="form.type" required #type="ngModel">
+                            <option value="admin">Administrateur</option>
+                            <option value="user">Utilisateur</option>
+                        </select>
+                        <div *ngIf="f.submitted && type.invalid" class="alert alert-danger">
+                            Type est requis.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Photo de profil :</label>
+                        <input type="photo"class="form-control"  [(ngModel)]="form.photo" name="photo"  #photo="ngModel" >
+                        <div *ngIf="f.submitted && photo.invalid" class="alert alert-danger">
+                            Photo est requis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+            </div>
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                Échec de l'inscription !<br />{{ errorMessage }}
+            </div>
+            <div class="alert alert-success" *ngIf="isSuccessful">
+                Votre inscription est réussie !
+            </div>
+        </form>
+        <div style="margin-top: 10px;"></div>
+        <form>
+            <div class="form-group">
+                <a routerLink="/login" style="text-align: center; display: block;" >J'ai déjà un compte</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

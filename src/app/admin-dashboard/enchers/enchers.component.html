@@ -1,0 +1,140 @@
+
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+<div *ngIf="loading" class="loading-container">
+  <span class="spinner-border mr-2" role="status" aria-hidden="true"></span>
+  <span class="h5 mb-0 text-muted">Chargement des enchères...</span>
+</div>
+
+<h1 class="header">Liste des enchères</h1>
+<button type="button" class="add" (click)="onCreate()" style="font-style: normal; border-radius: 10px; margin-right: 56px;">
+  <i class="fas fa-pencil-alt"></i> Ajouter 
+</button>
+<div *ngIf="showAddForm" class="form-container">
+  <h2 style="text-align: center; margin-bottom: 1px;">Ajouter un enchère</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="margin-bottom: 10px;">
+    <div class="row">
+      <div class="form-row">
+        <div class="form-group row mb-4 align-items-center" style="max-width: 50%;">
+          <div class="col-sm-3">
+            <label for="dateDebut" class="col-form-label text-nowrap text-dark fw-bold">Date Début</label>
+          </div>
+          <div class="col-sm-9">
+            <div class="input-group">   
+              <input type="datetime-local" aria-label="Date de début" class="form-control border-1 shadow-sm rounded-start" id="dateDebut" formControlName="dateDebut" required placeholder="jj/mm/aaaa">
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group row mb-4 align-items-center" style="max-width: 50%;">
+          <div class="col-sm-3">
+            <label for="dateFin" class="col-form-label text-nowrap text-dark fw-bold">Date Fin</label>
+          </div>
+          <div class="col-sm-9">
+            <div class="input-group">
+            
+              <input type="datetime-local" aria-label="Date de fin" class="form-control border-1 shadow-sm rounded-start" id="dateFin" formControlName="dateFin" required placeholder="jj/mm/aaaa">
+            </div>
+          </div>
+        </div>
+        <!--<div class="form-row">
+          <div class="form-group row mb-3 align-items-center" style="margin-right: 5px;">
+            <label for="edit-admin" class="col-sm-3 col-form-label text-nowrap text-gray-600 fw-bold">Administrateur</label>
+            <div class="col-sm-9">
+              <div class="input-group">
+                <select class="form-control" id="admin" formControlName="admin" required>
+                  <option *ngFor="let admin of admins" [value]="admin.id">{{ admin.nom }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        
+    </div>
+
+    <div class="row">
+        <div class="form-group row d-flex align-items-center mb-3" style="margin-bottom: 5px;width: 59rem;">
+          <label for="edit-article">Article</label>
+          <select class="form-control" id="edit-article" formControlName="articles" required>
+            <option *ngFor="let article of articles" [value]="article.id">{{ article.titre }}</option>
+          </select>
+        </div>
+          
+      </div>
+      </div>
+    <div class="text-right">
+      <button type="submit" class="btn btn-success" style="margin-right: 10px;">Soumettre</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelCreation()">Fermer</button>
+    </div>
+  </form>
+</div>
+
+<div class="table-container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"class="centered"style="text-align: center;"> <i class="far fa-calendar-alt"></i> Date Début</th>
+        <th scope="col"class="centered"style="text-align: center;"> <i class="far fa-calendar-alt"></i> Date Fin </th>
+       <th scope="col"class="centered"style="text-align: center;"> <i class="fas fa-user-tie"></i> Administrateur</th>
+        <th scope="col"class="centered"> <i class="fas fa-info-circle"></i>  Etat</th>
+        <th scope="col"class="centered"> <i class="fas fa-cogs"></i> Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enchere of encheres">
+        <td class="centered"style="text-align: center;" >{{ enchere?.dateDebut ? formatDate(parseDate(enchere.dateDebut)) : '' }}</td>
+        <td class="centered"style="text-align: center;">{{ enchere?.dateFin ? formatDate(parseDate(enchere.dateFin)) : '' }}</td>
+        <td class="centered" style="text-align: center;">
+          {{ enchere?.admin?.id !== undefined ? (adminNames[enchere.admin.id] || 'Aucun administrateur associé') : 'Aucun administrateur associé' }}
+        </td>
+        <td class="centered">{{ enchere?.etat }}</td>
+        <td class="centered">
+          <!-- Vérifier si l'enchère n'est pas terminée -->
+          <ng-container *ngIf="enchere && enchere.etat !== 'termine'">
+            <button type="button" class="btn btn-edit" (click)="editEnchere(enchere)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </ng-container>
+          <button type="button" class="btn btn-delete" (click)="enchere && enchere.id !== undefined && deleteEnchere(enchere.id)">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="editMode" class="form-containerr">
+  <h2>Modifier une enchère</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="card p-3">
+    <input type="hidden" formControlName="id">
+    
+    <div class="form-row">
+      <div class="form-group row mb-4 align-items-center" style="max-width: 50%;">
+        <label for="edit-dateDebut" class="col-form-label text-nowrap text-dark fw-bold">Date Début</label>
+        <input type="datetime-local" class="form-control" id="edit-dateDebut" formControlName="dateDebut" required>
+      </div>
+      <div class="form-group row mb-4 align-items-center" style="max-width: 50%;">
+        <label for="edit-dateFin" class="col-form-label text-nowrap text-dark fw-bold">Date Fin</label>
+        <input type="datetime-local" class="form-control" id="edit-dateFin" formControlName="dateFin" required>
+      </div>
+      <div class="form-group row mb-4 align-items-center" style="max-width: 190%;">
+        <label for="edit-admin" class="col-form-label text-nowrap text-dark fw-bold">Administrateur</label>
+        <select class="form-control" id="edit-admin" formControlName="admin" required>
+          <option *ngFor="let admin of admins" [value]="admin.id">{{ admin.nom }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="edit-articles">Articles</label>
+      <select class="form-control" id="edit-articles" formControlName="articles" required>
+        <option *ngFor="let article of articles" [value]="article.id">{{ article.titre }}</option>
+      </select>
+    </div>
+  
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary mr-2">Enregistrer</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Annuler</button>
+    </div>
+  </form>
+</div>

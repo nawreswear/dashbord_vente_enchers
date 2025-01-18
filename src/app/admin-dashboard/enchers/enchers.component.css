@@ -1,0 +1,631 @@
+.bid-form-group {
+  display: flex;
+  align-items: center;  /* Align label and input vertically */
+  margin-bottom: 1rem;
+}
+
+.bid-form-group label {
+  flex: 0 0 30%;  /* Allocate 30% width to label */
+  margin-right: 1rem;  /* Add space between label and input */
+}
+
+.bid-form-group input {
+  flex: 1;  /* Make input field fill remaining space */
+}
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+/* Styles pour les grands écrans */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 60%;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-group.row {
+  background-color: #fff; /* White background color */
+  padding: 15px 20px; /* Adjust padding for spacing */
+}
+.form-group.row {
+  background-color: #fff; /* White background color */
+  padding: 15px 20px; /* Adjust padding for spacing */
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  background: #fff; /* Lighten calendar icon background */
+  border: 1px solid #ccc; /* Add a subtle border to the calendar icon */
+  cursor: pointer; /* Make the calendar icon clickable */
+}
+.form-group.row {
+  background-color: #fff; /* Light background color for the rows */
+  border-radius: 4px; /* Subtle rounded corners */
+  padding: 12px 16px; /* Adjust padding for spacing */
+  display: flex; /* Enable flexbox layout for better alignment */
+  align-items: center; /* Center the labels and input groups vertically */
+}
+
+.col-form-label {
+  flex: 0 0 auto; /* Allow labels to wrap to multiple lines if needed */
+  text-align: right; /* Align labels to the right for a consistent layout */
+  padding-right: 10px; /* Spacing between label and input group */
+  font-weight: bold; /* Bold font for labels */
+  color: #333; /* Darker text color for better contrast */
+}
+
+.datepicker-container {
+  flex: 1 1 auto; /* Allow input groups to expand */
+  position: relative; /* Enable positioning for the calendar icon */
+}
+
+.form-control {
+  border: 1px solid #ddd; /* Light border for inputs */
+  border-radius: 4px; /* Consistent rounded corners */
+  padding: 8px 12px; /* Adjust padding for better spacing */
+  font-size: 14px; /* Consistent font size */
+  color: #333; /* Darker text color for better contrast */
+}
+
+.form-control:focus {
+  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2); /* Subtle blue shadow on focus */
+}
+
+.input-group-text {
+  display: none; /* Hide the default calendar icon (optional) */
+}
+
+/* Optional: Add a custom calendar icon using Font Awesome */
+.datepicker-container:after {
+  content: "\f073"; /* Font Awesome calendar icon code */
+  font-family: FontAwesome; /* Replace with your font family if needed */
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Center the icon vertically */
+  right: 10px; /* Spacing between icon and input border */
+  color: #999; /* Light gray color for the icon */
+  cursor: pointer; /* Indicate clickable icon */
+}
+
+.input-group-text {
+  /* Existing styles */
+  padding-left: 10px; /* Adjust padding for left shift */
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 21%;
+  }
+
+  .form-container {
+    width: 70%;
+  }
+}
+
+/* Styles pour les écrans très petits, comme les téléphones mobiles */
+@media (max-width: 576px) {
+  .container {
+    margin-top: 30%;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+
+/* Autres styles */
+.container {
+    margin-top: 70%;
+    max-width: 960px;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    margin: 0 auto;
+}
+
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 20%;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+}
+
+/* Styles pour les écrans très petits, comme les téléphones mobiles */
+@media (max-width: 576px) {
+  .container {
+    margin-top: 30%;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+.table{
+  margin-left: 19%;
+  margin-top: -74rem; 
+   height: 10%;
+   width: 71%;
+   border-collapse: collapse;
+}
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 40px; /* Adjust spacing as needed */
+}
+.header {
+  margin-top: 25px;
+  margin-left: 8%;
+  text-align: center ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px; /* Ajustez la taille de la police selon vos préférences */
+  margin-bottom: 20px;
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header {
+  position: absolute; /* Position absolue pour centrer le titre */
+  top: 80px; /* Position verticale au milieu de la page */
+  left: 50%; /* Position horizontale au milieu de la page */
+  transform: translate(-50%, -50%); /* Déplacement de -50% de la largeur et de la hauteur du titre pour le centrer */
+  z-index: 1000; /* Pour s'assurer que le titre est au-dessus des autres éléments */
+  font-family: Arial, Helvetica, sans-serif; /* Famille de police */
+  font-size: 24px; /* Taille du texte */
+  color: #000000; /* Couleur du texte */
+  text-align: center; /* Centrage du texte */
+}
+.text-center {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+/* Add Auction Button */
+.add-button {
+  background-color: #09df50;
+  color: #fff;
+  border-color: #246449;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-left: 5%;
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+
+}
+.form-containerr{
+    position: absolute;
+    top: 58%;
+    left: 56%;
+    margin-left: 5px;
+    transform: translate(-50%, -50%);
+    width: 73%;
+    padding: 5px;
+    border-radius: 8px;
+   background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+  }
+  .centered {
+    text-align: center;
+    padding: 10px;
+}
+  .form-container {
+    position: absolute;
+    top: 59%;
+    left: 55%;
+    margin-left: 10px;
+    transform: translate(-50%, -50%);
+    width: 73%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  } 
+.form-container h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 0.1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.btn-success {
+  color: #ffffff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-secondary {
+  color: #ffffff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/* Table Styles */
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+.table-container {
+  /* Vos styles actuels */
+  margin-top: 90px; 
+  margin-left: 20px;/* Ajoute une marge en haut au tableau */
+
+}
+.table-row {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-row:hover {
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+
+.table-header {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+.table td,
+.table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+
+}
+
+.thead-dark th {
+  color: #fff;
+  background-color: #8b939c;
+ 
+}
+
+/* Buttons */
+.btn {
+  border-radius: 0.25rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+  border-color: #6c757d;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+.add {
+  position: absolute;/* Position fixe pour maintenir le bouton en haut */
+  top: 140px; /* Distance du haut de la page */
+  right: 68%;/* Distance de la droite de la page */
+  z-index: 1000; /* Pour s'assurer que le bouton est au-dessus des autres éléments */
+  background-color: rgb(92, 90, 221);/* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Supprimer la bordure */
+  border-radius: 4px; /* Coins arrondis */
+  padding: 10px 20px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur pointer */
+  transition: background-color 0.3s ease; /* Transition de couleur de fond en douceur */
+  font-weight: bold;
+}
+/* Modifier la taille de la police et la couleur du titre */
+h2 {
+  font-size: 24px;
+  color: #000000;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center; /* Centrer le texte */
+}
+.btn-add:hover {
+  background-color: #0056b3; /* Changement de couleur de fond au survol */
+}
+.form-container input[type="text"]:focus {
+  border-color: #505152;
+  outline: none;
+}
+.btn-add {
+  top: 60px;
+  margin-right: 20px;
+  position: relative;
+}  
+
+body {
+  font-family: sans-serif;
+  font-size: 0.8rem; /* Adjust for base font size */
+}
+
+.text-right button {
+  margin-left: 0.5rem;
+}
+.btn-outline-primary {
+  background-color: transparent;
+  color: #007bff; /* Primary blue color */
+  border-color: #007bff;
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: #6c757d; /* Grayish color */
+  border-color: #6c757d;
+}
+.btn-edit {
+  color: #fff;
+  background-color: #219c35;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  font-size: 14px;
+ 
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #dc3545;
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  font-size: 14px;
+}
+/* Style for labels and form controls */
+.form-group label {
+  display: block; /* Ensure labels are on separate lines */
+  margin-bottom: 0.5rem; /* Add some space between label and input */
+  font-weight: bold; /* Make labels stand out */
+}
+
+.form-control {
+  display: block; /* Ensure inputs take up full width */
+  width: 100%; /* Explicitly set width for consistency */
+  padding: 0.5rem 1rem; /* Consistent padding for form controls */
+  font-size: 1rem; /* Consistent font size */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 0.25rem; /* Consistent rounded corners */
+  margin-bottom: 1rem; /* Add space between form controls */
+}
+
+/* Style for submit and cancel buttons within the form */
+.text-right button {
+  margin-left: 0.5rem; /* Add some spacing between buttons */
+}
+
+/* Style pour les boutons de couleur primaire */
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* White text for primary button */
+}
+
+
+
+/* Style pour les boutons de couleur information */
+.btn-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+/* Style pour les boutons de couleur succès */
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+/* Style pour les boutons de couleur avertissement */
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+/* Styles for the sidebar container */
+.sidebar {
+  width: 280px;
+  background-color: #0a2250;
+  height: 1200px;
+  padding: 20px;
+  z-index: 20;
+  margin-left: -20px;
+}
+
+
+/* Grid item */
+.grid-item {
+  width: 100%;
+}
+
+/* Titles */
+h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitles */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Styles for the sidebar header */
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styles for the sidebar title */
+.sidebar-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect for sidebar title */
+.sidebar-title:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the sidebar subtitle */
+.sidebar-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Styles for the sidebar list */
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styles for the sidebar item */
+.sidebar-item {
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for sidebar item */
+.sidebar-item:hover {
+  background-color: rgba(31, 13, 190, 0.1);
+}
+
+/* Styles for the sidebar link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ccc;
+}
+
+/* Styles for the sidebar icon */
+.sidebar-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Styles for the sidebar text */
+.sidebar-text {
+  font-size: 16px;
+}
+.new-user-section {
+  font-style: italic;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.btn-add {/* Position absolue pour centrer le bouton */
+  top:9rem; /* Position verticale au milieu de la page */
+  margin-left: 85% ;
+  /* Position horizontale au milieu de la page */
+  transform: translate(-50%, -50%); /* Déplacement de -50% de la largeur et de la hauteur du bouton pour le centrer */
+  z-index: 1000; /* Pour s'assurer que le bouton est au-dessus des autres éléments */
+  background-color: #007bff; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Supprimer la bordure */
+  border-radius: 4px; /* Coins arrondis */
+  padding: 10px 20px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur pointer */
+  transition: background-color 0.3s ease; /* Transition de couleur de fond en douceur */
+  margin-bottom: 20px;
+}
+
+.btn-add:hover {
+  background-color: #0056b3; /* Changement de couleur de fond au survol */
+}

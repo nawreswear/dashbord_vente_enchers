@@ -1,0 +1,70 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" (click)="openModal()" style="background-color: rgb(92, 90, 221); border: 1px solid #ccc;">
+  <i class="bi bi-plus-circle-fill"></i>
+  Nouveau Utilisateur
+</button>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display': display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ajouter un utilisateur</h4>
+        
+      </div>
+      <div class="modal-body">
+        <ng-container *ngTemplateOutlet="formEditeur"></ng-container>
+      </div>
+     
+    </div>
+  </div>
+</div>
+<ng-template #formEditeur>
+  <div class="container">
+
+    <form [formGroup]="userForm" (ngSubmit)="addUser()"> 
+      
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input type="text" class="form-control" id="nom" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prénom :</label>
+        <input type="text" class="form-control" id="prenom" formControlName="prenom">
+      </div>
+ 
+    <div class="form-group">
+        <label for="cin">Cin :</label>
+        <input type="number" class="form-control" id="cin" formControlName="cin">
+      </div>
+      <div class="form-group">
+        <label for="type">Type :</label>
+        <select type="text" class="form-control" id="type" formControlName="type">
+        <option value="admin">Administrateur</option>
+        <option value="user">Utilisateur</option>
+        </select>
+
+      </div>
+      <div class="form-group">
+        <label for="tel">Téléphone :</label>
+        <input type="text" class="form-control" id="tel" formControlName="tel">
+      </div>
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input
+            type="password"class="form-control"id="password" name="password" formControlName="password" minlength="6"/>
+    </div>
+      <div class="modal-footer">
+        <div class="btn-container">
+            <button type="submit" class="btn btn-success" (click)="addUser()">Enregistrer</button>
+            <button type="button" class="btn btn-close" (click)="closeModal()">Fermer</button>
+
+        </div>
+    </div>
+ 
+    </form>
+  </div>
+
+</ng-template>

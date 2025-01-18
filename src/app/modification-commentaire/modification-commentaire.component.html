@@ -1,0 +1,20 @@
+<h2 style=" text-align: center;font-size: 2em;margin-bottom: 20px;color: #3f1b1b;">Modifier un commentaire</h2>
+<div style="  display: flex;flex-direction: column; padding: 10px;border: 1px solid #ddd;margin-left: 10px; margin-right: 10px;
+border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);margin-bottom: 5px; margin-top: 5px;">
+  <label style=" font-size: 16px;   margin-bottom: 10px;" for="objet">Objet </label>
+  <input style=" width: 100%; padding: 12px; border: 1px solid #ccc;border-radius: 4px;
+   font-size: 14px; box-sizing: border-box; " type="text" id="objet" [(ngModel)]="commentaireAModifier.object" required>
+</div>
+<div style="  display: flex;flex-direction: column; padding: 20px;border: 1px solid #ddd; border-radius: 8px;  margin-left: 10px; margin-right: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);margin-bottom: 5px; margin-top: 5px;">
+  <label style="font-size: 16px; margin-bottom: 10px;" for="message">Message </label>
+  <textarea style=" width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; 
+  box-sizing: border-box;" id="message" [(ngModel)]="commentaireAModifier.message" required></textarea>
+</div>
+
+<div style="margin-bottom: 10px; margin-top: 5px; margin-left: 10px; margin-right: 10px;">
+  <button  style="background-color: #069425; color: #fff; display: inline-block; padding: 10px 20px;border: none;border-radius: 4px; cursor: pointer; 
+  transition: background-color 0.3s ease;margin-left: 10px;margin-right: 10px;" class="btn btn-primary"  (click)="appliquer()">Appliquer</button> 
+  <button style="background-color: #cf0e0e; color: #fff;  display: inline-block; padding: 10px 20px;border: none; border-radius: 4px; cursor: pointer; 
+  transition: background-color 0.3s ease; " class="btn btn-secondary"  (click)="fermer()">Annuler</button>
+</div>

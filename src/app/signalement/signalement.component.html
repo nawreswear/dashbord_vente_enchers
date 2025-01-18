@@ -1,0 +1,156 @@
+<span class="close-button" (click)="fermer()">&times;</span>
+<div class="signalement-form">
+  <h2>Ajouter un signal
+  <span class="signalement-icon"><i class="fas fa-bell" style="color: #4267B2;"></i></span></h2>
+  <div class="form-group">
+    <h3> Pour l'article "{{ data.article.titre }}"</h3>
+    <label for="message">Message </label>
+    <textarea id="message" [(ngModel)]="message" name="message"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="type">Type </label>
+    <select id="type" [(ngModel)]="type" name="type">
+      <option value="" disabled selected>Choisissez un type de signalement</option>
+      <option value="spam">Spam</option>
+      <option value="harassment">Harcèlement</option>
+      <option value="abuse">Abus</option>
+      <option value="inappropriate_content">Contenu inapproprié</option>
+      <option value="security_issue">Problème de sécurité</option>
+      <option value="fake_account">Compte faux</option>
+      <option value="violence">Contenu violent</option>
+      <option value="copyright_infringement">Violation de droits d'auteur</option>
+      <option value="privacy_violation">Violation de la vie privée</option>
+      <option value="fake_news">Fausses nouvelles</option>
+      <option value="autre">Autre</option>
+    </select>
+  </div>
+  <button class="btn-signalement" (click)="addSignalement()"> <i class="fas fa-paper-plane"></i> Envoyer signalement</button>
+</div>
+
+<style>
+ /* General styling */
+.signalement-card {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.signalement-header {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.signalement-icon {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  color: #f44336; /* Facebook red */
+}
+
+.signalement-content {
+  padding: 20px;
+}
+
+.signalement-footer {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+textarea,
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.9rem;
+  }
+
+  textarea {
+  height: 100px; /* Adjust height as needed */
+  resize: vertical;
+}
+textarea,
+select {
+  flex: 1; /* Allow input/select to fill remaining space */
+  border: 1px solid #ddd; /* Lighter border color */
+  padding: 5px;
+  border-radius: 5px;
+}
+/* Add subtle focus styles */
+textarea:focus,
+select:focus {
+  outline: none; /* Remove default browser outline */
+  border-color: #4267b2; /* Facebook blue on focus */
+}
+/* Select styling */
+select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Error notification */
+.error-notification {
+  background-color: #f8d7da;
+  color: #721c21;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.error-icon {
+  margin-right: 5px;
+}
+
+/* Button styling */
+.btn-signalement {
+  background-color: #4267B2; /* Facebook blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.btn-signalement:hover {
+  background-color: #385899; /* Darker blue on hover */
+}
+
+.btn-signalement i {
+  margin-right: 5px;
+}
+
+</style>

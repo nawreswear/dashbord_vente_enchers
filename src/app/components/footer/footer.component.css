@@ -1,0 +1,59 @@
+/* Style pour le pied de page */
+footer {
+    background-color: #ffffff; /* Couleur de fond */
+    border-top: 1px solid #e2e8f0; /* Bordure supérieure */
+    padding: 3rem 1rem; /* Espacement intérieur */
+  }
+  
+  /* Style pour la navigation */
+  footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  footer nav a {
+    margin: 0.5rem;
+    color: #6b7280; /* Couleur du texte */
+    text-decoration: none;
+    font-weight: 500; /* Graisse de la police */
+    transition: color 0.3s ease; /* Transition de couleur */
+  }
+  
+  footer nav a:hover {
+    color: #4b5563; /* Couleur du texte au survol */
+  }
+  
+  /* Style pour les icônes de médias sociaux */
+  footer .social-icons a {
+    display: inline-block;
+    margin: 0.5rem;
+    color: #6b7280; /* Couleur des icônes */
+    transition: color 0.3s ease; /* Transition de couleur */
+  }
+  
+  footer .social-icons a:hover {
+    color: #4b5563; /* Couleur des icônes au survol */
+  }
+  
+  /* Style pour le texte de copyright */
+  footer p {
+    margin-top: 2rem;
+    text-align: center;
+    color: #6b7280; /* Couleur du texte */
+  }
+  
+  /* Style pour les icônes de médias sociaux */
+  footer .social-icons svg {
+    width: 24px; /* Largeur des icônes */
+    height: 24px; /* Hauteur des icônes */
+  }
+  
+  /* Style pour la barre de séparation */
+  footer .separator {
+    margin: 2rem auto; /* Marge extérieure */
+    height: 1px; /* Hauteur de la barre */
+    width: 80%; /* Largeur de la barre */
+    background-color: #e2e8f0; /* Couleur de la barre */
+  }
+  

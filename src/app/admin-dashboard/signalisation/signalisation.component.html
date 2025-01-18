@@ -1,0 +1,45 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="content">
+  <h2 class="header">Liste des signaux</h2>
+
+  <table class="container">
+    <tr>
+      <td colspan="7">
+        <p class="warning">  <i class="fas fa-exclamation-triangle" style="color: orange;"></i>
+Lorsque 10 signaux sont enregistrés, la suppression du dernier entraîne celle de l'article associé, 
+tout en bloquant le compte du vendeur ayant publié cet article pour retourner à un simple utilisateur   </p>
+      </td>
+    </tr> 
+     <tr>
+      <th>Message</th>
+      <th> Date</th>
+      <th>Type</th>
+      <th>Article</th>
+      <th> Vendeur</th>
+      <th>Utilisateur </th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let signalement of signalements">
+      <td>{{ signalement.message }}</td>
+      <td>{{ signalement.date | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+      <td>{{ signalement.type }}</td>
+      <td>{{ signalement.article.titre }}</td>
+      <td>
+        <div *ngIf="signalement.errorText">
+          <p>{{ signalement.errorText }}</p>
+        </div>
+      </td> 
+      <td>
+        {{ signalement.user.nom }}   {{ signalement.user.prenom }}
+      </td>
+      <td>
+        <ng-container *ngIf="shouldShowDeleteButton(signalement.article.id)">
+          <button (click)="deleteVendeur(signalement.errorText ? signalement.errorText : '')"(click)="deleteAllSignalementsForArticle(signalement.article.id)">
+            <i class="fas fa-trash" style="color: red;"></i>
+          </button>
+        </ng-container>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,84 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+        <div *ngIf="loading" class="loading">Chargement des catégories...</div>
+        <h2 class="header">Liste des catégories</h2>
+        <button type="button" class="btn-add" style=" font-style: normal;border-radius: 10px;margin-right: 20px;"(click)="onCreate()">
+          <i class="fas fa-pencil-alt"></i> Ajouter
+        </button>
+        <div *ngIf="onCreatee" class="form-container">
+          <h2>Ajouter une catégorie</h2>
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="titre">Titre catégorie</label>
+              <input type="text" class="form-control" id="titre" formControlName="titre" placeholder="Entrez le nom">
+            </div>
+            <div class="form-group">
+              <label for="description">Description catégorie</label>
+              <textarea class="form-control" id="description" formControlName="description" placeholder="Entrez la description"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="image">Image URL</label>
+              <input type="url" class="form-control" id="image" formControlName="image" placeholder="URL de l'image" required>
+            </div>
+            <div class="form-group">
+            <button type="submit" class="btn btn-success">Soumettre</button>
+            <button type="button" class="btn btn-close" (click)="cancelCreation()">Fermer</button>
+          </div>
+          </form>
+        </div>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Image</th>
+              <th scope="col">Titre</th>
+              <th scope="col">Description</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categories">
+              <td>
+                <ng-container *ngIf="category?.image">
+                  <img *ngIf="isValidURL(category.image)" [src]="category?.image" alt="category image" class="card-img-top"/>
+                  <span *ngIf="!isValidURL(category.image)">Aucune image disponible pour le moment</span>    
+              </ng-container>
+                </td>
+              <td>{{ category?.titre }}</td>
+              <td>{{ category?.description }}</td>
+              <td>
+                <div class="button-container">
+                <button type="button" class="btn btn-edit" style="color: #fff;" (click)="editCategory(category)">
+                  <i class="fas fa-edit"style="color: #fff;"></i>
+                </button>
+                <button type="button" class="btn btn-delete" style="color: #fff;" (click)="deleteCategory(category.id.toString())">
+                  <i class="fas fa-trash"style="color: #fff;"></i>
+                </button>
+              </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div *ngIf="editMode"class="form-containerr">
+          <h2>Modifier une catégorie</h2>
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="card p-3">
+            <div class="form-group">
+              <label for="edit-titre">Titre</label>
+              <input type="text" class="form-control" id="edit-titre" formControlName="titre" required>
+            </div>
+            <div class="form-group">
+              <label for="edit-description">Description</label>
+              <textarea class="form-control" id="edit-description" formControlName="description" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="edit-image">Image URL</label>
+              <input type="url" class="form-control" id="edit-image" formControlName="image" required>
+            </div>
+            <div class="btn-group float-right">
+              <button type="submit" class="btn btn-success">Enregistrer</button>
+              <button type="button" class="btn btn-close" (click)="cancelEdit()">Annuler</button>
+            </div>
+          </form>
+        </div>
+        

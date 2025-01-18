@@ -1,0 +1,51 @@
+<div class="container">
+  <h2  style="text-align: center; font-style: normal; margin-bottom: 30px;">Detail un utilisateur</h2>
+  <form [formGroup]="userForm">
+        <div class="form-photo">
+          <ng-container *ngIf="user?.photo">
+            <img *ngIf="isValidURL(user.photo.toString())" [src]="user.photo" alt="Photo de l'utilisateur" class="photo"/>
+            <p *ngIf="!isValidURL(user.photo.toString())" class="form-control-static">Aucune image disponible</p>
+          </ng-container>
+        </div>
+    <div class="form-row">
+      <div class="form-group col-lg-6">
+        <label for="nom" class="col-sm-2 col-form-label">Nom :  {{ user.nom}}</label>  
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="prenom" class="col-sm-2 col-form-label">Prénom : {{ user.prenom}}</label>
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="tel" class="col-sm-2 col-form-label">Téléphone :  {{ user.tel}}</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-lg-6">
+        <label for="email" class="col-sm-2 col-form-label">Email :  {{ user.email}} </label>
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="type" class="col-sm-2 col-form-label">Type : {{ user.type}}</label>
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="cin" class="col-sm-2 col-form-label">Cin :   {{ user.cin}}</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-lg-6">
+        <label for="codePostal" class="col-sm-2 col-form-label">Code Postal : {{ user.codePostal}}</label>
+      </div>
+      <div class="form-group col-lg-6">
+        <label for="pays" class="col-sm-2 col-form-label">Pays :  {{ user.pays}}</label>
+      </div>
+      <div class="form-group col-lg-6 ">
+        <label for="ville" class="col-sm-2 col-form-label">Ville : {{ user.ville}}</label>
+      </div>
+    </div>
+ 
+ 
+    <div class="form-group row justify-content-center">
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-danger" (click)="goBack()">Retour</button>
+      </div>
+    </div>
+  </form>
+</div>

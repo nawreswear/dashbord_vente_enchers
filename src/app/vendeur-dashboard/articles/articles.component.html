@@ -1,0 +1,57 @@
+<div style="margin-top: 10px;margin-bottom: 10px;">
+<section >
+    <!-- Formulaire pour créer un nouvel article -->
+    <form [formGroup]="articleForm" (ngSubmit)="submitArticle()"class="article-form">
+      <!-- Ajoutez les champs du formulaire pour titre, description, photo, prix, livrable, statut -->
+      <div class="form-container">
+        <h1 class="form-title">Ajout un article</h1>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" class="form-control" id="titre" formControlName="titre" placeholder="Entrez le titre" required>
+          </div>
+          <div class="form-group">
+            <label for="photo">URL de l'image</label>
+            <input type="url" class="form-control" id="photo" formControlName="photo" placeholder="Entrez l'URL de l'image" required>
+          </div>
+          <div class="form-group">
+            <label for="quantite">Quantité</label>
+            <input type="number" class="form-control" id="quantiter" formControlName="quantiter" placeholder="Entrez la quantité" required>
+          </div>
+         
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prix">Prix</label>
+            <input type="text" class="form-control" id="prix" formControlName="prix" placeholder="Entrez le prix" required>
+          </div>
+          <div class="form-group">
+            <label for="statut">Statut</label>
+            <input type="text" class="form-control" id="statut" formControlName="statut" placeholder="Entrez le statut" required>
+          </div>
+            <div class="form-group">
+              <label for="livrable">Livrable</label>
+              <input type="text" class="form-control" id="livrable" formControlName="livrable" placeholder="Entrez si l'article est livrable ou non" required>
+            </div>         
+          </div>
+          <div class="form-row">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" formControlName="description" placeholder="Entrez la description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="categorie"> Catégorie</label>
+            <select class="form-control" id="categorie" formControlName="categorie" required>
+                <option *ngFor="let categorie of categories" [ngValue]="categorie.id">{{ categorie.titre }}</option>
+            </select>
+        </div> 
+          </div>       
+          <div class="button-container">
+          <button type="submit" class="btn btn-primary" (click)="goBack()" >Ajouter</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Fermer</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
+

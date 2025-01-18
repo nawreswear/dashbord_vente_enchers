@@ -1,0 +1,100 @@
+<div class="category-articles-modal" *ngIf="category">
+    <h3>Articles de la catégorie {{ category?.titre }}</h3>
+    <ul class="image-grid">
+      <li *ngFor="let article of articles">
+        <ng-container *ngIf="isValidURL(article.photo)">
+          <div class="image-bubble">
+            <img [src]="article.photo" alt="Article Image">
+          </div>
+          <span>{{ article.titre }}</span>
+        </ng-container>
+        <ng-container *ngIf="!isValidURL(article.photo)">
+          <div class="image-bubble no-image">
+            <span>Aucune image disponible pour le moment</span>
+          </div>
+        </ng-container>
+      </li>
+    </ul>
+    <button type="button" class="btn btn-close" (click)="closeDetails()">Fermer</button>
+  </div>
+<style>
+    .category-articles-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 700px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.category-articles-modal h3 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Espace entre les éléments */
+  list-style-type: none;
+  padding: 0;
+}
+
+.image-bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-bubble img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-bubble img:hover {
+  transform: scale(1.05);
+}
+
+.no-image {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.btn-close {
+  background-color: #ff5f5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  padding: 20px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-close:hover {
+  background-color: #ff3c3c;
+}
+
+</style>  

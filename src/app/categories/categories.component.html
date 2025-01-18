@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div *ngIf="loading" class="d-flex justify-content-center align-items-center bg-light border rounded p-3">
+  <span class="spinner-border mr-2" role="status" aria-hidden="true"></span>
+  <span class="h5 mb-0 text-muted">Chargement des catégories...</span>
+</div>
+
+<div class="card-container">
+  <div *ngFor="let category of categories" class="card" >
+    <div class="card-body" >
+      <ng-container *ngIf="isValidURL(category.image)" >
+        <img [src]="category.image" alt="Category Image" style="max-width: 250px; max-height: 250px;margin-left: 15%;">
+      </ng-container>
+      <ng-container *ngIf="!isValidURL(category.image)">
+        <span>Aucune image disponible pour le moment</span>
+      </ng-container>
+      <h5 class="card-title" style="text-align: center;">{{ category?.titre }}</h5>
+      <p class="card-text">{{ category?.description }}</p>
+      <p class="card-text">
+        <button class="button" (click)="showCategoryDetails(category)">
+          <i class="fas fa-arrow-right"></i> Voir les articles
+        </button>
+      </p>
+    </div>
+    
+    <category-articles
+      *ngIf="selectedCategory"
+      [category]="selectedCategory"
+      [articles]="categoryArticles"
+      (close)="closeCategoryDetails()"
+    ></category-articles>
+        </div>
+</div>
+
+
+<div style="margin-bottom: 170px;margin-left: 5px;margin-right: 5px;"></div>

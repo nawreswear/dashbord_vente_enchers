@@ -1,0 +1,64 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="containerr">
+    <div class="header">
+        <h1  style="text-align: center; font-style: normal; margin-bottom: 5px;">Liste des utilisateurs</h1>
+    </div>
+   
+    <div class="new-user-section">
+        <app-new-user></app-new-user>
+    </div>
+    <br/>
+    <div *ngIf="showAlert" class="alert-container">
+        <div class="alert alert-success" role="alert">
+            Utilisateur supprimé avec succès!
+        </div>
+        <button class="btn btn-ok" (click)="hideAlert()">OK</button>
+    </div>
+    <form [formGroup]="userForm" class="user-form">
+        <table class="table table-striped"class="table table-striped custom-table" >
+            <thead class="head">
+                <tr>
+                    <th>Profil</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="body">
+                <ng-container *ngFor="let user of users.data">
+                    <tr>
+                        <td>
+                            <ng-container *ngIf="user?.photo">
+                                <!-- Assurez-vous que user.photo est de type string -->
+                                <img *ngIf="isValidURL(user.photo.toString())" [src]="user?.photo" alt="article Image" class="card-img-top" class="article_Image"/>
+
+                                <!-- Assurez-vous que user.photo est de type string -->
+                                <span *ngIf="!isValidURL(user.photo.toString())">Aucune image disponible pour le moment</span>
+                            </ng-container>
+                        </td>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.prenom }}</td>
+                        <td>{{ user.email }}</td> 
+                        <td>{{ user.tel }}</td>
+                        <td>{{ user.type }}</td>
+                        <td class="actions">
+                           <button [routerLink]="['/users', user?.id, 'edit']" class="btn btn-edit">
+                                <i class="fas fa-edit"></i> 
+                            </button>
+                             <!--<button type="button" class="btn btn-delete" *ngIf="user.type.includes('user')" (click)="showAlert = true; deleteUser(user.id)">
+                                <i class="fas fa-trash-alt"></i> 
+                            </button>-->                           
+                            <button [routerLink]="['/users', user.id]" class="btn btn-view-details">
+                                <i class="fas fa-eye"></i> 
+                            </button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </form>
+</div>

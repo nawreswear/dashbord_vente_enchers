@@ -1,0 +1,168 @@
+.all{
+  margin-top: -74rem; 
+  margin-left: 25%;
+  width: 100%;
+ 
+}  
+
+
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 24px;
+  margin-bottom: 45px;
+  margin-left: 10%;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+}
+.btn-edit {
+  color: #fff;
+  background-color: #219c35;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  font-size: 14px;
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #dc3545;
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  font-size: 14px;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+
+
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+
+    /* Styles for the sidebar header */
+.sidebar-header {
+  margin-bottom: 5px;
+}
+
+/* Styles for the sidebar title */
+.sidebar-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect for sidebar title */
+.sidebar-title:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the sidebar subtitle */
+.sidebar-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Styles for the sidebar list */
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styles for the sidebar item */
+.sidebar-item {
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for sidebar item */
+.sidebar-item:hover {
+  background-color: rgba(31, 13, 190, 0.1);
+}
+
+/* Styles for the sidebar link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ccc;
+}
+
+/* Styles for the sidebar icon */
+.sidebar-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Styles for the sidebar text */
+.sidebar-text {
+  font-size: 16px;
+}
+/* Styles for the sidebar container */
+.sidebar {
+  width: 230%;
+  background-color: #0a2250;
+  height: 1200px;
+  padding: 20px;
+  z-index: 20;
+  margin-left: -20px;
+}
+.table{
+  width: 70%;
+}
+tbody {
+  margin-top: 90px; /* Ajustez la valeur selon vos préférences */
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Styles pour regrouper les boutons */
+.btn-group {
+  margin-right: 50px; /* Espacement entre les boutons */
+}
+
+/* Styles pour chaque bouton */
+.btn-group .btn {
+  display: inline-block; /* Afficher les boutons côte à côte */
+  margin-right: 5px; /* Espacement entre les boutons */
+  padding: 8px 16px; /* Ajustez la taille des boutons selon vos préférences */
+  border-radius: 5px; /* Bord arrondi */
+}
+
+/* Style pour le bouton "Approve" */
+.btn-group .btn-edit {
+  color: #fff;
+  background-color: #219c35; /* Couleur de fond pour le bouton "Approve" */
+}
+
+/* Style pour le bouton "Reject" */
+.btn-group .btn-delete {
+  color: #fff;
+  background-color: #dc3545; /* Couleur de fond pour le bouton "Reject" */
+}

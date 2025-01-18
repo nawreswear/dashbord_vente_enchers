@@ -1,0 +1,504 @@
+/* Existing styles */
+
+.article-details-container img {
+    transition: none; 
+  }
+  
+  .article-details {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+  }
+  .image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.article-image {
+    width: 300px;
+    height: 300px;
+    max-width: 50%;
+    transition: transform 0.3s ease;
+  
+}
+
+.zoomed {
+    transform: scale(1.01);
+}
+.zoomedd {
+  transform: scale(0.8); /* Réduire la taille de l'image à 80% de sa taille d'origine */
+}
+  .article-details h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #333; /* Set heading text color */
+  }
+  
+  .article-details p {
+    margin-bottom: 10px;
+  }
+  
+  .article-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .article-info li {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Set info label text color */
+  }
+  
+  .article-price {
+    color: #999; /* Price with a slightly lighter color */
+  }
+  
+  .delete-button {
+    background-color: #c0392b; /* Reddish tone */
+    color: #fff;
+    padding: 8px 15px; /* Adjust button padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Add hover effect transition */
+  }
+  
+  .delete-button:hover {
+    background-color: #b02e20; /* Darken on hover */
+  }
+  
+  /* Image container and options styles */
+   .article-image-container {
+    position: relative; /* Position the image and options container */
+    margin-bottom: 15px; /* Add some margin below the image */
+  }
+  .article-image-container img {
+    width: 50%; /* Allow image to fill container width */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: contain; /* Scale image to fit within container (shows borders) */
+  }
+  
+ 
+  .image-options {
+    position: absolute; /* Position the options on top of the image */
+    top:10px;
+    right: 10px; /* Place them on the right */
+    display: flex; /* Arrange options horizontally */
+    gap: 10px; /* Add spacing between options */
+  }
+  
+  /* Article details */
+.article-details {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Titre de l'article */
+.article-details h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Description de l'article */
+.article-details p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Informations sur l'article */
+.article-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.article-info li:first-child {
+  margin-top: 0;
+}
+
+.article-price {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Bouton de fermeture */
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Section des commentaires */
+.commentaires {
+  margin-top: 30px;
+}
+
+.commentaires h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Formulaire d'ajout de commentaire */
+.commentaires input,
+.commentaires textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.commentaires textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Target the 'fa-comment-dots' icon */
+i.fas.fa-comment-dots.fa-inverse path[stroke] {
+  stroke: white;
+  
+  stroke-width: 2px; /* Adjust as needed */
+}
+
+
+.commentaires button {
+  color: #110404;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Liste des commentaires */
+.commentaires ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.commentaires li {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+}
+
+.commentaires li:last-child {
+  border-bottom: none;
+}
+/* Target the button with the Font Awesome icon */
+button.delete-button {
+  /* Remove default button styles */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  
+  /* Center the icon horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the Font Awesome icon */
+.fas.fa-times {
+  color: black;
+  font-size: 1.2em; /* Adjust size as needed */
+}
+/* Container for the comment form */
+.commentaires {
+  background-color: #f0f0f0; /* Light gray background */
+  border: 1px solid #ccc; /* Light border */
+  padding: 15px; /* Add some padding inside the container */
+  border-radius: 5px; /* Slightly rounded corners */
+  margin-top: 20px; /* Add some space above the container */
+}
+
+/* Input field */
+.commentaires input[type="text"] {
+  width: 100%; /* Make the input field span the full width */
+  padding: 10px 15px; /* Add some padding for better visual appearance */
+  border: 1px solid #ccc; /* Add a light border for better visual separation */
+  border-radius: 3px; /* Slightly rounded corners for the input field */
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add some space below the input field */
+  box-sizing: border-box; /* Ensure that padding is included in the total width */
+}
+
+/* Textarea */
+.commentaires textarea {
+  width: 100%; /* Make the textarea span the full width */
+  height: 100px; /* Adjust the height as needed */
+  padding: 10px 15px; /* Add some padding for better visual appearance */
+  border: 1px solid #ccc; /* Add a light border for better visual separation */
+  border-radius: 3px; /* Slightly rounded corners for the textarea */
+  font-size: 16px; /* Adjust the font size as needed */
+  resize: vertical; /* Allow users to resize the textarea vertically */
+  margin-bottom: 10px; /* Add some space below the textarea */
+  box-sizing: border-box; /* Ensure that padding is included in the total height */
+}
+
+/* Button */
+.commentaires button {
+  margin-left: 85%;
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add some padding for better visual appearance */
+  border: none; /* Remove the default button border */
+  border-radius: 3px; /* Slightly rounded corners for the button */
+  cursor: pointer; /* Indicate that the element is clickable */
+  transition: background-color 0.3s ease; /* Add a smooth hover effect */
+}
+.commentaires ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.commentaires li {
+  border-bottom: 1px solid #ddd; /* Add a light border between comments */
+  padding: 15px; /* Add some padding for better readability */
+}
+
+.commentaires li:last-child {
+  border-bottom: none; /* Remove the bottom border for the last comment */
+}
+
+.commentaires p {
+  margin-bottom: 5px; /* Add some space between paragraphs */
+}
+
+.commentaires p:first-child { /* Style the "Objet" paragraph */
+  font-weight: bold;
+}
+
+
+.commentaires p:nth-child(3) { /* Style the "Date" paragraph */
+  font-size: 12px; /* Smaller font size for date */
+  color: #ccc; /* Lighter color for date */
+}
+
+.commentaires p:last-child { /* Style the "User" paragraph */
+  font-weight: bold;
+}
+.button-afficher {
+  background-color: #f0f2f5;
+  color: #1877f2;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px; /* Pour créer un bouton rond */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-afficher:hover {
+  background-color: #dbeafe;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.comment-controls {
+  float: right;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.options-dropdown {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.options-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  top: -10px; /* Pour déplacer le menu vers le haut */
+  right: -10px; /* Pour le placer à droite */
+}
+
+.options-menu .option {
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.comment-date {
+  color: #999;
+}
+
+.comment-content {
+  margin-top: 10px;
+}
+
+.comment-message {
+  margin: 0;
+}
+.comment-bubble {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+
+.comment-controls {
+  position: relative;
+}
+.option {
+  color: rgb(6, 72, 196);
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.options-dropdown {
+  cursor: pointer;
+  font-size: 2.5rem; /* Ajustez la taille selon vos besoins */
+  color: #555; /* Couleur des trois points */
+  margin-right: 10px; /* Espace entre les options et le reste du contenu */
+}
+/* CSS pour les options */
+.options-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.option {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  color: red; /* couleur rouge pour les options */
+}
+
+.option:hover {
+  background-color: #f9f9f9;
+}
+
+.comment-controls .options-dropdown {
+  font-size: 240px;
+  cursor: pointer;
+  /* Add Bootstrap class for larger font size */
+  font-size: .75em;
+}
+
+
+/* Overall form styling */
+.commentaire-form {
+  display: flex; /* Use flexbox for a more modern layout */
+  flex-direction: column; /* Arrange elements vertically */
+  align-items: center; /* Center elements horizontally */
+  padding: 20px; /* Add some padding for spacing */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+.commentaire-form label {
+  font-size: 16px; /* Larger font size for labels */
+  margin-bottom: 10px; /* Add space between label and input */
+}
+
+/* Input and textarea styling */
+#objet,
+#message {
+  width: 100%; /* Make inputs take full width */
+  padding: 12px; /* Increase padding */
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Smaller font size for inputs */
+  box-sizing: border-box; /* Include padding in element width */
+}
+
+#message {
+  height: 150px; /* Adjust textarea height as needed */
+  resize: vertical; /* Allow users to resize the textarea vertically */
+}
+
+/* Button styling */
+.btn {
+  display: inline-block; /* Make buttons fit within the flex container */
+  padding: 10px 20px; /* Adjust padding */
+  border: none; /* Remove default button border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Indicate clickable area */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn:hover {
+  background-color: #e0e0e0; /* Change background color on hover */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Blue primary button */
+  color: #fff; /* White text */
+}
+
+.btn-secondary {
+  background-color: #ccc; /* Gray secondary button */
+  color: #333; /* Dark gray text */
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}

@@ -1,0 +1,329 @@
+/* Overall table styling */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+table {
+    width: 100%; /* Expand table to fill container */
+    border-collapse: separate; /* Remove default table borders */
+    border-spacing: 0; /* No space between table cells */
+}
+
+/* Modifier la taille de la police et la couleur du titre */
+h2 {
+    font-size: 24px;
+    color: #ac2a09; /* Couleur bleue */
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; /* Centrer le texte */
+}
+.image-bubble {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+  }
+  
+  .image-bubble img {
+    max-width: 100%;
+    height: auto;
+   
+  }
+  
+  .image-bubble::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  .image-bubble span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  .article-list-container {
+    margin-bottom: 60px; /* Espacement en bas de la liste des articles */
+  }
+  .image-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+   
+  }
+  
+  .image-list li {
+    margin-right: 5px; /* Espace entre chaque image */
+    margin-top: 15%;
+  }
+  
+  .image-bubble {
+    display: inline;
+
+  }
+  /* Style de base du bouton */
+.button {
+    background-color: #4CAF50; /* Couleur de fond */
+    border: none; /* Supprimer la bordure */
+    color: white; /* Couleur du texte */
+    padding: 15px 32px; /* Espacement autour du texte */
+    text-align: center; /* Alignement du texte au centre */
+    text-decoration: none; /* Supprimer la décoration du texte */
+    display: inline-block; /* Afficher en ligne */
+    font-size: 16px; /* Taille de la police */
+    margin: 4px 2px; /* Marge autour du bouton */
+    cursor: pointer; /* Curseur pointeur */
+    border-radius: 8px; /* Bord arrondi */
+  }
+  
+  /* Style lorsque survolé */
+  .button:hover {
+    background-color: #45a049; /* Couleur de fond légèrement plus foncée */
+  }
+  
+  /* Style lorsque pressé */
+  .button:active {
+    background-color: #3e8e41; /* Couleur de fond légèrement plus foncée lorsqu'appuyé */
+    transform: translateY(1px); /* Décalage vers le bas pour simuler une pression */
+  }
+  
+  .image-bubble img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .image-bubble.no-image {
+    width: 150px; /* Largeur de la bulle si aucune image n'est disponible */
+  }
+  
+  .image-bubble span {
+    display: block;
+    text-align: center;
+    color: white;
+  }
+  .category-details {
+    margin-top: 20px;
+}
+
+/* Ajouter une marge inférieure pour donner de l'espace en dessous des articles de chaque catégorie */
+.category-details:last-child {
+    margin-bottom: 20px;
+}
+  
+/* Styling pour les icônes */
+.fa-edit{
+    color: #0ed64a; /* Couleur bleue */
+    font-size: 20px; /* Taille de police */
+    cursor: pointer; /* Curseur de souris sur survol */
+    transition: color 0.3s ease; 
+}
+.fa-trash {
+    color: #eb370a; /* Couleur bleue */
+    font-size: 20px; /* Taille de police */
+    cursor: pointer; /* Curseur de souris sur survol */
+    transition: color 0.3s ease; /* Transition en douceur */
+}
+
+.fa-edit:hover,
+.fa-trash:hover {
+    color: #0056b3; /* Changement de couleur au survol */
+}
+
+h1 {
+    font-size: 24px;
+    color: #2a0987; /* Couleur bleue */
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; /* Centrer le texte */
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+/* Styling pour les étiquettes */
+label {
+    font-size: 16px; /* Taille de la police */
+    color: #495057; /* Couleur de texte sombre */
+}
+
+/* Styling pour les champs de formulaire */
+.form-control {
+    font-size: 16px; /* Taille de la police */
+    color: #495057; /* Couleur de texte sombre */
+    background-color: #f8f9fa; /* Couleur de fond */
+    border: 1px solid #ced4da; /* Bordure légère */
+}
+
+/* Styling pour les boutons */
+.btn-primary, .btn-secondary {
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    text-transform: uppercase; /* Convertir en majuscules */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Couleur bleue */
+    color: #fff; /* Texte blanc */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Couleur grise */
+    color: #fff; /* Texte blanc */
+}
+
+/* Styling pour la section principale du formulaire */
+.card {
+    background-color: #fff; /* Couleur de fond blanche */
+    border: 1px solid #dee2e6; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 20px; /* Rembourrage */
+}
+
+/* Styling pour les groupes de formulaire */
+.form-group {
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Styling pour les messages d'erreur */
+.error-message {
+    color: #190d9f; /* Couleur rouge */
+    font-size: 14px; /* Taille de la police */
+    margin-top: 5px; /* Marge supérieure */
+}
+
+
+/* Table header styling */
+th {
+    padding: 12px; /* Add padding for readability */
+    text-align: left; /* Align headers to the left */
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #dee2e6; /* Thin border for separation */
+}
+
+/* Table body styling */
+td {
+    padding: 12px; /* Add padding for readability */
+    border: 1px solid #dee2e6; /* Thin border for separation */
+}
+
+/* Image styling */
+img {
+    max-width: 100px; /* Limit image width for responsiveness */
+    max-height: 100px; /* Limit image height for consistent sizing */
+    border-radius: 4px; /* Add rounded corners */
+}
+
+/* Buttons styling */
+button {
+    margin: 5px; /* Add spacing between buttons */
+    padding: 10px 16px; /* Adjust padding for button size */
+    border: none; /* Remove default button borders */
+    border-radius: 4px; /* Add rounded corners */
+    cursor: pointer; /* Indicate clickable behavior */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button:hover {
+    filter: brightness(90%); /* Darken button on hover */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue primary button color */
+    color: #fff; /* White text */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gray secondary button color */
+    color: #fff; /* White text */
+}
+
+/* Loading message styling */
+.loading {
+    text-align: center; /* Center the loading message */
+    font-weight: bold; /* Emphasize the loading text */
+    margin-top: 20px; /* Add some margin for spacing */
+}
+
+/* Edit form styling */
+form {
+    display: flex; /* Arrange form elements horizontally */
+    flex-direction: column; /* Stack elements vertically */
+    width: 50%; /* Adjust form width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding for better spacing */
+    border: 1px solid #dee2e6; /* Thin border for the form */
+    border-radius: 4px; /* Rounded corners for a smoother look */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Add spacing between form groups */
+}
+
+label {
+    display: block; /* Display labels on their own line */
+    margin-bottom: 8px; /* Add space between label and input */
+    font-weight: bold; /* Bold label text */
+}
+
+.form-control {
+    width: 100%; /* Fill the entire form group width */
+    padding: 10px; /* Add padding for user input */
+    border: 1px solid #ced4da; /* Light border for input fields */
+    border-radius: 4px; /* Rounded corners for form elements */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Success message styling */
+.success-message {
+    color: #28a745; /* Green success message color */
+    font-weight: bold; /* Emphasize success message */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+
+  }
+  
+  .card {
+    width: 420px; /* Largeur fixe de chaque carte */
+    height: 400px; /* Hauteur fixe de chaque carte */
+    margin-right: 10px; 
+    margin-left: 10px;
+    margin-top: 15px;/* Espacement entre les cartes sur le côté droit */
+    margin-bottom: 50px; /* Espacement entre les cartes en bas */
+    border: 1px solid #ccc; /* Bordure de la carte */
+    border-radius: 5px; /* Coins arrondis de la carte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre de la carte */
+}
+
+.card-img-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+.card-body {
+    padding: 2px; 
+}
+
+.card-title {
+    font-size: 1.25rem; 
+    font-weight: bold; 
+}
+
+.card-text {
+    margin-bottom: 5px; 
+}

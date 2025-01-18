@@ -1,0 +1,236 @@
+
+
+<!--<div id="history"tyle="margin-bottom: 5px;width: 50%;margin-left: 90px;">
+  <div *ngFor="let chat of chats" style="margin-bottom: 5px;width: 50%;margin-left: 90px;"class="chat-bubble">
+    <mat-card >
+      <mat-card-subtitle>
+        <p>  {{ chat.userreceive }}</p>
+        <span> {{ chat.timestamp | date:'long' }}</span>       
+      </mat-card-subtitle>
+      <mat-card-content>
+        <p> {{ chat.message }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<form id="message" [formGroup]="form" (ngSubmit)="onChatSubmit(form.value)"style="margin-bottom: 20%;">
+  <form appearance="outline" class="fw"style="margin-left: 5%;  display: flex;  width: 20%;height:100%;
+  background-color: #fff;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* Subtle rounded corners */
+  padding: 5px 10px; /* Adjust padding as needed */
+  margin-bottom: 10px; ">
+    <label>Enter Chat</label>
+    <input matInput formControlName="message">
+
+  </form>
+  
+  <form appearance="outline" class="fw" style="margin-left: 5%;  display: flex;  width: 20%;height:100%;
+  background-color: #fff;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* Subtle rounded corners */
+  padding: 5px 10px; /* Adjust padding as needed */
+  margin-bottom: 10px; ">
+    <mat-label>User Receive</mat-label>
+    <input matInput formControlName="userreceive">
+  </form>
+  <form appearance="outline" class="fw">
+    <button type="submit" matSuffix mat-icon-button aria-label="Submit"
+    style="height:85%;
+  width: 20%;
+  margin-left: 5%;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;font-weight: bold;">
+   send
+    </button>
+  </form>
+</form>-->
+<style>
+  /* Styles pour l'ensemble de la page */
+  body {
+    background-image: url('/assets/1b22d2912d76df5aedade53c400a14e1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+  }
+
+  /* Styles pour la liste des messages */
+  .conversation-container {
+    overflow-y: auto;
+    max-height: 70vh; /* Limite la hauteur de la liste des messages pour permettre le défilement */
+    padding: 20px; /* Ajout de rembourrage pour éviter que les messages ne soient collés au bord */
+  }
+  @media only screen and (max-width: 768px) {
+            .conversation-container {
+                max-width: 100%;
+            }
+            .message-input {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .message-input input {
+                margin: 5px 0;
+            }
+        }
+  /* Styles pour chaque message */
+  .message-container {
+    margin-bottom: 10px;
+ /* Ajout d'une couleur de fond avec une opacité de 80% */
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .message-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+  }
+
+  /* Styles pour le formulaire d'envoi de messages */
+  .message-input {
+    bottom: 20px; /* Marge inférieure */
+    left: 20px; /* Marge gauche */
+    right: 20px; /* Marge droite */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+
+  .message-input input {
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .message-input button {
+    background-color: transparent; 
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+  }
+  .profile-img-card {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+}
+.avatar {
+  display: flex; /* Utilisation de Flexbox */
+  align-items: center; /* Alignement vertical au centre */
+}
+
+.avatar img {
+  margin-right: 10px; /* Marge à droite pour séparer l'image du texte */
+}
+.message-input {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 15px;
+  position: relative; /* For emoji button positioning */
+}
+
+.emoji-btn {
+  position: absolute; /* Position the emoji button within the input area */
+  left: 10px; /* Adjust horizontal placement */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Offset vertical positioning */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+.body::-webkit-scrollbar {
+    display: none; /* Pour Chrome, Safari et Opera */
+}
+
+#message-field {
+  flex: 1; /* Allow the input field to grow and fill available space */
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px 10px; /* Adjust padding for a cleaner look */
+  background-color: transparent; /* Remove default background color */
+  border-radius: 4px; /* Subtle rounded corners for the input field */
+}
+
+.message-input button {
+  background-color: #4285F4;
+  border: none;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.message-input button:hover {
+  background-color: #3a7bd5; /* Slight color change on hover */
+}
+.message-input ::placeholder{
+  color: black;
+}
+button[type="submit"],
+button[type="button"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #268a13;
+  color: #fff;
+}
+
+</style>
+
+<body>
+  <div id="inbox-container">
+    <!-- Barre latérale avec la liste des messages -->
+    <div id="history" class="conversation-container" style="max-width: 80%; margin: 0 auto;">
+      <div *ngFor="let chat of chats" class="message-container" style="margin-bottom: 10px;">
+        <div class="message">
+          <div class="avatar">
+            <img id="profile-img" src="assets/418309886_1495373367860434_1161646263246716743_n.jpg" class="profile-img-card" /> {{ chat.userreceive }}
+          </div>
+          <div class="message-content">
+            <p>{{ chat.message }}</p>
+          </div>
+          <div class="message-meta">
+            <span></span>
+            <span>{{ chat.timestamp | date:'short' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <form id="message" [formGroup]="form" (ngSubmit)="onChatSubmit(form.value)" class="message-input" style="margin: 0 20px; display: flex; align-items: flex-end;margin-bottom: 20%;">
+      <mat-form-field appearance="fill" style="margin-right: 20px;">
+        <input matInput placeholder="Enter Chat...." formControlName="message" style="background-color: transparent; color: rgb(17, 17, 19);">
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="margin-right: 20px;">
+        <input matInput placeholder="User Receive..." formControlName="userreceive" style="background-color: transparent; color: rgb(6, 6, 7);">
+      </mat-form-field>
+      <button mat-icon-button type="submit" aria-label="Submit" class="btn btn-primary" style="background-color: #087fce; color: #fff; padding: 10px; font-size: 20px;margin-right: 20px;">
+        <i class="fas fa-paper-plane"></i>  Envoyer
+      </button>
+
+    </form>
+
+  </div>
+
+</body>

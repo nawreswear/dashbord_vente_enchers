@@ -1,0 +1,101 @@
+<div class="h-[90vh] relative">
+  <!-- Grande image -->
+  <div class="navbar-images">
+    <button (click)="previousImage()" class="nav-arrow">&#8249;</button>
+    <img [src]="categories[currentImageIndex]?.image" class="category-image" alt="Image de catégorie">
+    <h3 class="category-title">{{ categories[currentImageIndex]?.titre }}</h3>
+    <button (click)="nextImage()" class="nav-arrow">&#8250;</button>
+</div>
+</div>
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> 
+  <section aria-labelledby="category-heading" class="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8" style="margin-bottom: 1%;">
+    <div class="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0">
+      <h2 id="category-heading" class="text-2xl font-bold tracking-tight text-gray-900" style="margin-top: 1%;">Shop by Category</h2>
+     <!--<a routerLink="/categories" *ngIf="!authService.isLoggedIn()" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+        Browse all categories
+        <span aria-hidden="true"> &rarr;</span>
+      </a>-->
+    </div>
+  
+    <div class="mt-9 flow-root category-container">
+      <div class="relative box-content h-80 overflow-x-auto py-2" style="height: 0%;justify-content:space-around;">
+        <div class="min-w-screen-xl flex justify-between px-4 sm:px-6 lg:px-8">
+          <ng-container *ngFor="let category of categories.slice(0, 5); let i = index">
+            <div class="category-card" (mouseenter)="zoomIn($event)" (mouseleave)="zoomOut($event)" (click)="showRelatedArticles(category.id)">
+              <img class="category-card__image" [src]="category?.image || 'assets/category.png'" alt="">
+              <div class="category-card__content">
+                <span class="text-xl font-bold">{{category.titre}}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+   
+  
+  
+    <!--<div class="mt-6 px-4 sm:hidden">
+      <a routerLink="/categories" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+        Browse all categories
+        <span aria-hidden="true"> &rarr;</span>
+      </a>
+    </div>-->
+  </section >
+
+  <div class="row">
+    <div class="card-containerr"style="margin-bottom: 5px;">
+      <div class="cardd" *ngFor="let article of articles.slice(0, 4)">
+        <a routerLink="" style="text-align: center;">
+        <img [src]="article.photo" class="card-img-top" alt="" style=" width: 60%; height: 29%; margin-left: 40px;margin-top: 5px;">
+        <div class="card-bodyy">
+          <h5 class="card-title">{{ article.titre }}</h5>
+          <div> Statut : {{ article.statut ? 'disponible' : 'Non disponible'}}</div>
+          <div> Quantité :<span>  {{ article.quantiter }} </span></div>
+          <div> Prix:<span class="article-price"> {{ article.prix }} Dt </span></div>
+          <div>Catégorie: <span class="article-price">{{ article.categorie.titre }}</span></div>
+          <div  class="edit-button-container">
+          <button class="primary" style="margin-top: 10px;" (click)="showArticleDetails(article)">Détail</button>
+        </div>
+        </div>
+        </a>
+      </div>
+    </div>
+</div>
+<div *ngIf="selectedArticle" class="article-details-container" style="margin-bottom: 5px; margin-left:15%;width:60%;height: 20%;">
+  <h1 style="text-align: center;">{{ selectedArticle.titre }}</h1>
+  <span><img [src]="selectedArticle.photo" alt="" style="width:10;height:10;">
+    {{ selectedArticle.description }}
+    Prix:<span class="article-price">  {{ selectedArticle.prix }} Dt</span>
+    Livrable:<span class="article-price">  {{ selectedArticle.livrable ? 'Oui' : 'Non' }}</span>
+    Quantiter: {{ selectedArticle.quantiter}}
+    Statut: {{ selectedArticle.statut}}
+    Categorie: {{ selectedArticle.categorie.titre }}
+  </span><p> </p>
+  <button class="delete-button" style="background-color: red;margin-top: 1px; border-radius: 8px;" (click)="closeArticleDetails()">Fermer</button>
+</div>
+
+<div><!--class="container"-->
+  <h1 class="page-title text-center">Les Enchères</h1>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let enchere of encheres">
+      <div class="card auction-card" style="margin-bottom: 20%;">
+        <div class="card-body">
+          <p class="card-text auction-date">Date de début : {{ enchere.dateDebut ? formatDate(parseDate(enchere.dateDebut)) : '' }}</p>
+          <p class="card-text auction-date">Date de fin : {{ enchere.dateFin ? formatDate(parseDate(enchere.dateFin)) : '' }}</p>
+          <!-- Vérifier si enchere.id est défini avant d'appeler getArticlesForEnchere(enchere.id) -->
+          <div *ngIf="enchere.id !== undefined && getArticlesForEnchere(enchere.id)">
+            <!-- Utilisation de ng-container pour boucler sur les articles -->
+            <ng-container *ngFor="let article of getArticlesForEnchere(enchere.id)">
+              <div style="display: inline-block; margin-right: 10px;">
+              <div style="text-align: center;">{{ article.titre }}</div>
+              <img [src]="article.photo" alt="Photo de l'article" width="100" height="100" style="border-radius: 20%;margin-left: 40%;">
+
+              <div style="text-align: center; color: rgb(146, 10, 10);font-weight: bold;"> {{ article.prix }} Dt</div>
+            </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<h1 style=" margin-top: -74rem; font-weight: lighter;font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 10%;  position: absolute;
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+  font-family: Arial, Helvetica, sans-serif; 
+  color: #000000; ">Liste des paiements</h1>
+    <div  class="container"> 
+    <table class="table"  style="margin-top: 15px;">
+      <thead>
+        <tr>
+          <th>Numéro </th>
+          <th>Montant (Dt)</th>
+          <th>Statut</th>
+          <th> <i class="far fa-calendar-alt"></i> Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paiement of paiements$ | async">
+          <td>{{ paiement.id }}</td>
+          <td>{{ paiement.montant }} </td>
+          <td>
+            <ng-container *ngIf="paiement.statut === 'En attente'">
+              <i class="fas fa-clock" style="background-color: rgb(245, 245, 14); color: rgb(118, 121, 121); font-size: 15px; font-style: normal;"></i>
+         
+            </ng-container>
+            <ng-container *ngIf="paiement.statut === 'acceptée'">
+              <i class="fas fa-check" style=" color: rgb(7, 145, 7); font-size: 15px; font-style: normal;"></i>  
+            </ng-container>
+          </td>
+                 <td>{{ paiement.date | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

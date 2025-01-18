@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <!-- Assurez-vous que authService.isLoggedIn() renvoie true lorsque l'utilisateur est connecté -->
+  <div *ngIf="authService.isLoggedIn()" class="flex items-center space-x-4" style="margin-top: 5px; margin-left: 5px;">
+    <a *ngIf="userType === 'vendeur'" routerLink="vendeur/articlesvendeur" routerLinkActive="activeLink" class="link">
+      <i class="fas fa-plus-circle"></i>   Ajout Article
+    </a>
+  </div>
+  <div class="card-container">
+    <div class="card" *ngFor="let article of articles; let i = index">
+        <div style="font-weight: bold;" class="comment-controls">
+            <span style="font-weight: bold; font-size: larger;" class="options-dropdown" (click)="toggleOptions(i)">
+                <i class="fas fa-exclamation-circle" (click)="ouvrirsignalement(article)" style="color: rgb(224, 10, 10); font-weight: bold;"></i>
+            </span>
+        </div>
+    
+
+      <img [src]="article.photo" class="card-img-top" alt="" style="margin-top: 5px; margin-left: 40px; width: 50%; height: 30%;"
+      (click)="showArticleDetails(article)">
+      <div class="card-body">
+        <h5 class="card-title">{{ article?.titre }}</h5>
+        <p>{{ article?.description }}</p>
+        <div> Statut : {{ article?.statut ? 'disponible' : 'Non disponible'}}</div>
+        <div> Quantité :<span>  {{ article?.quantiter }} </span></div>
+        <div> Prix:<span class="article-price"> {{ article?.prix }} Dt </span></div>
+           
+        <div>Catégorie: <span class="article-price">{{ article?.categorie?.titre }}</span></div>
+        <div  class="edit-button-container">
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </div>
+        <div *ngIf="isLoggedIn()">
+          <div *ngIf="isUserTheSeller(article)" class="edit-button-container">
+            <button class="edit-button" (click)="editArticleFunc(article)">Modifier</button>
+            <button class="delete-button" (click)="deleteArticle(article.id.toString())">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+
+
+</div>
+
+
+<div *ngIf="isModificationActive">
+  <!-- Formulaire pour éditer un article -->
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="article-form">
+    <!-- Titre et URL de l'image -->
+    <div class="form-container">
+      <h2 class="form-title">Modifier un article</h2>
+      <div class="form-row">
+        <div class="form-group col-md-9">
+          <label for="titre">Titre</label>
+          <input type="text" class="form-control" id="titre" formControlName="titre" placeholder="Entrez le titre" required>
+        </div>
+        <div class="form-group col-md-9">
+          <label for="photo">URL de l'image</label>
+          <input type="text" class="form-control" id="photo" formControlName="photo" placeholder="Entrez l'URL de l'image" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-9">
+          <label for="quantite">Quantité</label>
+          <input type="number" class="form-control" id="quantiter" formControlName="quantiter" placeholder="Entrez la quantité" required>
+        </div>
+        <div class="form-group col-md-9">
+          <label for="prix">Prix</label>
+          <input type="text" class="form-control" id="prix" formControlName="prix" placeholder="Entrez le prix" required>
+        </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-9">
+          <label for="statut">Statut</label>
+          <input type="text" class="form-control" id="statut" formControlName="statut" placeholder="Entrez le statut" required>
+        </div>
+        <div class="form-group col-md-9">
+          <label for="livrable">Livrable</label>
+          <input type="text" class="form-control" id="livrable" formControlName="livrable" placeholder="Entrez si l'article est livrable ou non" required>
+        </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-9">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" formControlName="description" placeholder="Entrez la description" required></textarea>
+      </div>
+      <div class="form-group col-md-9">
+        <label for="categorie">Catégorie</label>
+        <select class="form-control" id="categorie" formControlName="categorie" >
+          <option *ngFor="let categorie of categories" [value]="categorie?.id">{{ categorie?.titre }}</option>
+        </select>
+      </div>
+      </div>
+      
+      <!-- Boutons de soumission et d'annulation -->
+      <div class="button-container">
+        <button type="submit"class="btn btn-primary"style="margin-right: 10px;">Enregistrer</button>
+        <button type="button" class="btn btn-secondary"style="margin-left: 10px;" (click)="cancelEdit()">Annuler</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,240 @@
+.navbar-profile i {
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-right: 5px; /* Add spacing between the icon and the text */
+}
+
+.fly-item {
+  position: absolute;
+  top: -6.5px;
+  right: -6.5px;
+  height: 19px;
+  width: 19px;
+  font-size: 12px;
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.trinagleErr{
+  transition: all ease-in 0.3s;
+}
+.text-xl {
+  font-size: 1.25rem; /* Adjust the font size as needed */
+}
+
+.text-white {
+  color: #ffffff; /* Set the text color to white */
+}
+
+
+.mr-2 {
+  position: 500px;
+  margin-right: 0.5rem; /* Adjust the right margin as needed */
+}
+
+.errors::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -25px;
+  
+  right: 8px;
+  border-top: 15px solid transparent;
+  /* border-bottom: 15px solid rgb(239 68 68 / 5); */
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid black; 
+  
+}
+.p{
+  color: bisque;
+}
+.profile-bubble {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  z-index: 10;
+  color:cornflowerblue;
+  display: flex; /* Arrange labels and values horizontally */
+  gap: 5px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-pair {
+  margin-right: 20px; /* Ajustez la marge entre chaque paire selon vos préférences */
+}
+.info-label {
+font-weight: bold;
+margin-bottom: 2px;
+color: #333; /* Darker color for labels */
+}
+.h-10:hover img {
+transform: scale(1.1);
+transition: transform 0.2s ease-in-out;
+}
+.h-10:hover img {
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: box-shadow 0.2s ease-in-out;
+}
+
+.info-value {
+margin: 0;
+color: #666; /* Slightly lighter color for values */
+}
+.profile-bubble p {
+  margin-bottom: 8px;
+}
+
+.profile-bubble p:last-child {
+  margin-bottom: 0;
+}
+.info-label {
+  color: #090909; /* Couleur de texte pour les étiquettes d'information */
+  font-size: 16px;
+  font-weight: bold; /* Taille de police pour les étiquettes d'information */
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent; /* Ajustez la taille de la flèche selon vos préférences */
+  border-right: 5px solid transparent; /* Ajustez la taille de la flèche selon vos préférences */
+  border-top: 7px solid #fff; /* Couleur et taille de la flèche */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.info-value {
+  color: #007bff; /* Couleur de texte différente pour les valeurs d'information */
+  font-size: 16px; /* Taille de police différente pour les valeurs d'information */
+  font-weight: bold; /* Mettez en gras les valeurs d'information */
+}
+.modify-button{
+  color: #150320; /* Couleur de texte différente pour les valeurs d'information */
+  font-size: 16px; /* Taille de police différente pour les valeurs d'information */
+  font-weight: bold;
+ background-color:darkgrey;
+}
+.toggled-message {
+  display: none; /* Initially hidden */
+  position: absolute; /* Positioned above the user info bubble */
+  top: 100%; /* Aligned below the user info bubble */
+  left: 0; /* Aligned to the left edge of the bubble */
+  background-color: #fff; /* White background */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px;
+  z-index: 1; /* Ensure it displays above other elements */
+}
+
+.toggled-message.active {
+  display: block; /* Display when toggled */
+}
+
+.nav-link i {
+  margin-right: 5px; /* Espace entre l'icône et le texte */
+}
+.svg-icon {
+  width: 2vw; /* Adjust the size as needed */
+  height: 2vw;
+  fill: #212121; /* Replace with your desired color */
+}
+.spacer {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.inline-block {
+  display: inline-block;
+}
+.image-container {
+  width: 100px; /* Définissez la largeur souhaitée */
+  height: 100px; /* Définissez la hauteur souhaitée */
+  background-size: cover; /* Ajustez la taille de l'image pour remplir le conteneur */
+  background-position: center; /* Centrez l'image dans le conteneur */
+}
+
+
+
+.messagee {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.nav-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* Styles pour les messages */
+.message-container {
+border: 1px solid #ccc;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.avatar {
+display: inline-block;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.message-content {
+margin-left: 70px; /* Ajustez selon la taille de l'avatar */
+}
+.message-containerrr {
+position: absolute;
+top: 60px;
+right: 0;
+width: 300px;
+background-color: #ffffff;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+z-index: 100;
+}
+
+/* Styles pour le lien */
+.nav-linkk{
+display: block;
+margin-top: 10px;
+text-decoration: none;
+color: rgb(0, 0, 0);
+cursor: pointer;
+}
+
+.nav-linkk:hover {
+color: rgb(17, 17, 225);
+}
+.view-all-link {
+text-align: center;
+padding: 10px;
+}
+
+.view-all-link a {
+font-size:medium;
+color: #2f0094;
+text-decoration: none;
+}
+
+.view-all-link a:hover {
+text-decoration: underline;
+}

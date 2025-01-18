@@ -1,0 +1,58 @@
+<div class="article-details-container" style="display: flex;">
+    <div class="article-image-container">
+        <div class="image-options">
+            <button class="zoom-button" (click)="toggleZoom()">   <i class="fas fa-plus" style="color: black;"></i>  </button>
+        </div>    
+        <img [src]="selectedArticle?.photo" alt="" class="article-image" style="width: 600px; height: 550px; max-width: 600px;" [ngClass]="{ 'zoomed': isZoomed }">
+      </div>
+    <div class="article-details">
+      <button class="" (click)="closeArticleDetails()"><i class="fas fa-times" style="color: rgb(23, 8, 90); border-radius: 50%;"></i></button>
+
+        <h1>{{ selectedArticle?.titre }}</h1>
+        <p>{{ selectedArticle?.description }}</p>
+        <ul class="article-info">
+          <li>Prix: <span class="article-price" style="color: rgb(23, 8, 90);">{{ selectedArticle?.prix }} Dt</span></li>
+          <li>Livrable: <span class="article-price"style="color: rgb(23, 8, 90);">{{ selectedArticle?.livrable ? 'Oui' : 'Non' }}</span></li>
+          <li>Quantité: <span class="article-price"style="color: rgb(23, 8, 90);">{{ selectedArticle?.quantiter }}</span></li>
+          <li>Statut: <span class="article-price"style="color: rgb(23, 8, 90);">{{ selectedArticle?.statut }}</span></li>
+          <li>Catégorie: <span class="article-price"style="color: rgb(23, 8, 90);">{{ selectedArticle?.categorie?.titre }}</span></li>
+        </ul>
+        <ul>
+          <div class="commentaires" >
+          <input type="text" [(ngModel)]="nouveauCommentaire.object" placeholder="Objet du commentaire">
+          <textarea [(ngModel)]="nouveauCommentaire.message" placeholder="Message du commentaire"></textarea>
+          <button (click)="ajouterCommentaire()">
+            <i class="fas fa-comment-dots fa-inverse" style="color: #110404; font-size: 50px;"></i> 
+          </button>
+          <ul class="comment-list">
+            <ng-container *ngFor="let commentaire of commentaires; let i = index">
+              <li  style="font-weight: bold;" class="comment-item" *ngIf="i < 3 || afficherTousLesCommentaires">
+                <div style="font-weight: bold; " class="comment-controls" *ngIf="commentaire.user.id === userId">
+                  <span style="font-weight: bold;font-size: larger; " class="options-dropdown"   (click)="toggleOptions(i)" >&#8942;</span>
+                  <div  style="font-weight: bold;" *ngIf="selectedCommentIndex === i">
+                    <span class="option" style="color: rgb(224, 10, 10); font-weight: bold;" (click)="supprimerCommentaire(commentaire)"> <i class="fas fa-trash"></i> </span>
+                    <span class="option" style="color: rgb(6, 85, 25);font-weight: bold;" (click)="ouvrirFenetreModification(commentaire)"><i class="fas fa-edit"></i> </span>
+                  </div>
+                </div>
+                <div class="comment-bubble">
+                  <div class="user-info">
+                    <img class="user-avatar" [src]="commentaire.user.photo" alt="{{ commentaire.user.nom }}">
+                    <span class="user-name">{{ commentaire.user.nom }}</span>
+                  </div>
+                  <div class="comment-content">
+                    <p class="comment-message">{{ commentaire.object }}</p>
+                    <p class="comment-message">{{ commentaire.message }}</p>
+                    <p class="comment-date">{{ commentaire.date | date: 'dd/MM/yyyy HH:mm:ss' }}</p>
+                  </div>
+                </div>
+              </li>
+            </ng-container>
+          </ul>
+          </div>
+          <div>
+            <button *ngIf="selectedArticle && commentaires && commentaires.length > 3" (click)="afficherTousLesCommentaires = !afficherTousLesCommentaires" 
+              class="button-afficher">  
+            {{ afficherTousLesCommentaires ? 'Masquer les commentaires' : 'Afficher plus de commentaires' }}
+          </button>        
+  </div>
+  

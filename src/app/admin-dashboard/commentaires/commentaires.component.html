@@ -1,0 +1,36 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+<div class="content">
+  <h2 class="header">Liste des commentaires</h2>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Objet</th>
+          <th>Message</th>
+          <th>Date</th>
+          <th>Numéro Article </th>
+          <th>Utilisateur</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commentaire of commentaires">
+          <td>{{ commentaire.id }}</td>
+          <td>{{ commentaire.object }}</td>
+          <td>{{ commentaire.message }}</td>
+          <td>{{ commentaire.date | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+          <td>{{ commentaire.article.id }}</td>
+          <td>{{ commentaire.user.nom }}</td>
+          <td>
+            <button type="button" class="btn btn-delete" style="color: #fff;" (click)="supprimerCommentaire(commentaire.id)">
+                <i class="fas fa-trash"></i>    
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
